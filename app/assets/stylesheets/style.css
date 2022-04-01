@@ -2,12 +2,18 @@
   font-family: 'Carrois Gothic', sans-serif;
 }
 
+/* ナビゲーションバー */
 .navbar .nav-link {
   color: #fff !important;
   font-size: 17px;
   font-weight: 700;
 }
 
-.btn btn-primary {
-  color: black;
+/* ショップ画像部分 */
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }
