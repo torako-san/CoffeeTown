@@ -1,0 +1,13 @@
+.navbar {
+  font-family: 'Carrois Gothic', sans-serif;
+}
+
+.navbar .nav-link {
+  color: #fff !important;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.btn btn-primary {
+  color: black;
+}
