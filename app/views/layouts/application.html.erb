@@ -36,8 +36,10 @@
             <a class="nav-link" href="#">Disabled</a>
           </li>
           <li class="nav-item mx-2">
-            <button class="btn btn-primary mx-2" type="button">新規登録</button>
-            <button class="btn btn-primary mx-2" type="button">ログイン</button>
+            <%= button_to "新規登録", new_user_registration_path, method: :get, class: "btn btn-primary" %>
+          </li>
+          <li class="nav-item mx-2">
+            <%= button_to "ログイン", new_user_session_path,  method: :get, class: "btn btn-primary mx-2" %>
           </li>
         </ul>
         <form class="d-flex">
