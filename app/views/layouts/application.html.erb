@@ -15,37 +15,18 @@
 
   <body>
     <!-- navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-dark py-3">
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark py-2">
     <div class="container">
+
       <a class="navbar-brand" href="#">
-        <h2 class="text-white pt-1">CoffeeTown</h2>
+        <h1 class="text-white pt-2">CoffeeTown</h1>
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
-        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse me-4" id="navbarTogglerDemo02">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item mx-2">
-            <a class="nav-link" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item mx-2">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item mx-2">
-            <a class="nav-link" href="#">Disabled</a>
-          </li>
-          <li class="nav-item mx-2">
-            <button class="btn btn-primary mx-2" type="button">新規登録</button>
-            <button class="btn btn-primary mx-2" type="button">ログイン</button>
-          </li>
-        </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-      </div>
-    </div>
+
+      <% if user_signed_in? %>
+        <%= render 'layouts/login_user_header' %>
+      <% else %>
+        <%= render 'layouts/not_login_user_header' %>
+      <% end %>
   </nav>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
