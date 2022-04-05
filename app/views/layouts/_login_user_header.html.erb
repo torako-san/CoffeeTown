@@ -8,16 +8,13 @@
       <a class="nav-link" aria-current="page" href="#">Home</a>
     </li>
     <li class="nav-item mx-2">
-      <a class="nav-link" href="#">Link</a>
-    </li>
-    <li class="nav-item mx-2">
-      <a class="nav-link" href="#">Disabled</a>
+      <%= button_to "新規投稿", "#", method: :get, class: "btn btn-primary" %>
     </li>
     <li class="nav-item mx-2">
       <%= button_to "マイページ", "#", method: :get, class: "btn btn-primary" %>
     </li>
-    <li class="nav-item mx-2">
-      <%= button_to "ログアウト", destroy_user_session_path,  method: :delete, class: "btn btn-primary mx-2" %>
+    <li class="nav-item mx-3">
+      <%= button_to "ログアウト", destroy_user_session_path,  method: :delete, class: "btn btn-danger" %>
     </li>
   </ul>
   <form class="d-flex">
