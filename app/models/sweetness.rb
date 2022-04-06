@@ -9,5 +9,5 @@ class Sweetness < ActiveHash::Base
   ]
 
   include ActiveHash::Associations
-  has_many  :productions
+  has_many :productions
 end

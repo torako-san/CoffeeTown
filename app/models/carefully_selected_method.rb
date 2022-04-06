@@ -9,5 +9,5 @@ class CarefullySelectedMethod < ActiveHash::Base
   ]
 
   include ActiveHash::Associations
-  has_many :shops
+  has_many :productions
 end
