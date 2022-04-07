@@ -1,7 +1,7 @@
 class CreateProductions < ActiveRecord::Migration[6.0]
   def change
     create_table :productions do |t|
-      t.string  :name,                         null: false
+      t.string  :production_name,              null: false
       t.date    :purchase_date,                null: false
       t.string  :coffee_beans_type
       t.string  :farm_name

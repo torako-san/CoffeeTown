@@ -5,7 +5,7 @@
   </header>
   <div class="items-sell-main border">
     <h2 class="items-sell-title my-3">■店舗の情報を入力</h2>
-    <%= form_with model: @shop_production, local: true do |f| %>
+    <%= form_with model: @shop, local: true do |f| %>
 
     <%= render 'shared/error_messages', model: f.object %>
     
@@ -26,7 +26,7 @@
         <h3 class="shop">◎店舗名</h3>
         <span class="indispensable">必須</span>
       </div>
-      <%= f.text_field :name, class:"shops-text", id:"shop-name", placeholder:"店舗名", maxlength:"30" %>
+      <%= f.text_field :shop_name, class:"shops-text", id:"shop-name", placeholder:"店舗名", maxlength:"30" %>
       <div class="shops-url my-3">
         <div class="weight-bold-text">
           <h3 class="shop">◎店舗URL</h3>
@@ -83,7 +83,7 @@
         <div class="weight-bold-text">
           <h3 class="shop">◎商品名</h3>
         </div>
-        <%= f.text_field :name, class:"name", id:"name", placeholder:"例）アバカペーパードリッパー１００枚入り", maxlength:"30" %>
+        <%= f.text_field :production_name, class:"production_name", id:"production-name", placeholder:"例）アバカペーパードリッパー１００枚入り", maxlength:"30" %>
       </div>
       <div class="form my-3">
         <div class="weight-bold-text">
