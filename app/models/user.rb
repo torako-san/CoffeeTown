@@ -5,4 +5,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   validates :nickname, presence: true
+
+  with_options dependent: :destroy do
+    has_many :productions
+    has_many :shops
+  end
+
+  has_many :productions
+
 end
