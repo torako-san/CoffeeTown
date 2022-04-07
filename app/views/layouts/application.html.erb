@@ -18,8 +18,10 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-dark py-2">
     <div class="container">
 
-      <a class="navbar-brand" href="#">
-        <h1 class="text-white pt-2">CoffeePost</h1>
+      <a class="navbar-brand"> 
+        <h1 class="pt-2">
+          <%= link_to 'CoffeePost', root_path, class:"title text-white" %>
+        </h1>
       </a>
 
       <% if user_signed_in? %>
