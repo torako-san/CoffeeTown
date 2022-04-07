@@ -9,5 +9,5 @@ class Production < ApplicationRecord
   belongs_to :carefully_selected_method
   belongs_to :sweetness
   belongs_to :acidity
-  has_one_attached :image
+  has_many_attached :images
 end
