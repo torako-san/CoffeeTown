@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="t9F14xw1f0Ioce3EhGEr" name="ページ1">
-        <mxGraphModel dx="544" dy="515" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="2339" math="0" shadow="0">
+        <mxGraphModel dx="304" dy="515" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="2339" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -1312,7 +1312,7 @@
                     <mxGeometry y="30" width="192" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="470" value="アソシエーション" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=default;swimlaneFillColor=default;" parent="1" vertex="1">
-                    <mxGeometry x="960" y="1797" width="288" height="510" as="geometry"/>
+                    <mxGeometry x="960" y="1797" width="288" height="480" as="geometry"/>
                 </mxCell>
                 <mxCell id="483" value="has_many :production_tags" style="text;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;strokeColor=default;" parent="470" vertex="1">
                     <mxGeometry y="30" width="288" height="30" as="geometry"/>
@@ -1359,16 +1359,13 @@
                 <mxCell id="669" value="belongs_to :acidity" style="text;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;strokeColor=default;" parent="470" vertex="1">
                     <mxGeometry y="450" width="288" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="481" value="belongs_to :user" style="text;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;strokeColor=default;" parent="470" vertex="1">
-                    <mxGeometry y="480" width="288" height="30" as="geometry"/>
-                </mxCell>
                 <mxCell id="647" value="アソシエーション" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;perimeterSpacing=1;fillColor=default;swimlaneFillColor=default;" parent="1" vertex="1">
                     <mxGeometry x="2568" y="1570" width="192" height="64" as="geometry"/>
                 </mxCell>
                 <mxCell id="648" value="has_many :shops" style="text;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;" parent="647" vertex="1">
                     <mxGeometry y="30" width="192" height="34" as="geometry"/>
                 </mxCell>
-                <mxCell id="656" style="edgeStyle=elbowEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;startArrow=ERoneToMany;startFill=0;endArrow=ERone;endFill=0;strokeColor=#FFFFFF;strokeWidth=3;endSize=14;startSize=14;" parent="1" source="651" edge="1">
+                <mxCell id="656" style="edgeStyle=elbowEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;startArrow=ERoneToMany;startFill=0;endArrow=ERoneToMany;endFill=0;strokeColor=#FFFFFF;strokeWidth=3;endSize=14;startSize=14;" parent="1" source="651" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="1920" y="1264" as="targetPoint"/>
                         <Array as="points">
