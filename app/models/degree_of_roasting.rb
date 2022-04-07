@@ -1,4 +1,4 @@
-class DegreeOfRoasting_ < ActiveHash::Base
+class DegreeOfRoasting < ActiveHash::Base
   self.data = [
     { id: 1, name: '---' },
     { id: 2, name: 'ミディアムロースト（浅煎り）' },
