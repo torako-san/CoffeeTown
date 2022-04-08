@@ -1,7 +1,8 @@
 class Production < ApplicationRecord
-  belongs_to :bitter_taste
-  belongs_to :flavor
   belongs_to :shop
+  has_one_attached :images
+
+  extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :product_category
   belongs_to :coffee_blend
   belongs_to :degree_of_roasting
@@ -9,5 +10,6 @@ class Production < ApplicationRecord
   belongs_to :carefully_selected_method
   belongs_to :sweetness
   belongs_to :acidity
-  has_many_attached :images
+  belongs_to :bitter_taste
+  belongs_to :flavor
 end
