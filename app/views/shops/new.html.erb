@@ -51,16 +51,15 @@
     <h2 class="items-sell-title my-2">■商品情報を入力</h2>
 
     <%# 商品画像 %>
-   <div class="container my-3 w-50 justify-content-center border">
+   <div class="container my-3 w-75 border">
       <div class="weight-bold-text">
         <h3 class="shop">◎商品画像</h3>
         <span class="indispensable">必須</span>
         <label for="file" class="form-label">ファイル（複数選択可）</label>
       </div>
       <div class="input-group input-group-sm mb-3">
-        <%= f.file_field :image, id:"FormFile", class:"form-control", multiple: true %>
+        <%= f.file_field :images, id:"FormFile", class:"form-control", name: 'production[images][]', data: {index: 0}, multiple: true %>
       </div>
-      <div id="new-image"></div>
     </div>
     <%# /商品画像 %>
 
