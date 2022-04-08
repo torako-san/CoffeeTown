@@ -5,9 +5,9 @@
   </header>
   <div class="items-sell-main border">
     <h2 class="items-sell-title my-3">■店舗の情報を入力</h2>
-    <%= form_with model: @shop, local: true do |f| %>
+    <%= form_with model: @shop_production, url: shops_path, local: true do |f| %>
 
-    <%= render 'shared/error_messages', model: f.object %>
+    <%= render 'error_messages', model: f.object %>
     
     <%# 店舗情報 %>
     <div class="new-shops my-3">
