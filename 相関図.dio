@@ -1170,19 +1170,16 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="485" value="アソシエーション" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;perimeterSpacing=1;fillColor=default;swimlaneFillColor=default;" parent="1" vertex="1">
-                    <mxGeometry x="2832" y="1117" width="256" height="150" as="geometry"/>
+                    <mxGeometry x="2832" y="1117" width="256" height="120" as="geometry"/>
                 </mxCell>
-                <mxCell id="486" value="has_one :production" style="text;fillColor=default;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;strokeColor=default;" parent="485" vertex="1">
+                <mxCell id="486" value="has_one :production dependent:  :destory" style="text;fillColor=default;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;strokeColor=default;" parent="485" vertex="1">
                     <mxGeometry y="30" width="256" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="489" value="has_one_attached :image" style="text;fillColor=default;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;strokeColor=default;" parent="485" vertex="1">
+                <mxCell id="506" value="belongs_to :prefectures" style="text;fillColor=default;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;strokeColor=default;" parent="485" vertex="1">
                     <mxGeometry y="60" width="256" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="506" value="belongs_to :prefectures" style="text;fillColor=default;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;strokeColor=default;" parent="485" vertex="1">
-                    <mxGeometry y="90" width="256" height="30" as="geometry"/>
-                </mxCell>
                 <mxCell id="490" value="belongs_to :user" style="text;fillColor=default;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;strokeColor=default;" parent="485" vertex="1">
-                    <mxGeometry y="120" width="256" height="30" as="geometry"/>
+                    <mxGeometry y="90" width="256" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="524" value="アソシエーション" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;perimeterSpacing=1;fillColor=default;swimlaneFillColor=default;strokeColor=default;strokeWidth=1;" parent="1" vertex="1">
                     <mxGeometry x="1760" y="784" width="192" height="90" as="geometry"/>
@@ -1268,7 +1265,7 @@
                 <mxCell id="557" value="has_many :productions" style="text;fillColor=default;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;strokeColor=default;" parent="553" vertex="1">
                     <mxGeometry y="30" width="256" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="554" value="has_many :shop, dependent:  :destory" style="text;fillColor=default;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;perimeterSpacing=1;strokeColor=default;" parent="553" vertex="1">
+                <mxCell id="554" value="has_many :shop" style="text;fillColor=default;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;perimeterSpacing=1;strokeColor=default;" parent="553" vertex="1">
                     <mxGeometry y="60" width="256" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="555" value="has_many :wish_lists, dependent:  :destory" style="text;fillColor=default;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;strokeColor=default;" parent="553" vertex="1">
