@@ -1,98 +1,36 @@
-# テーブル設計
+# アプリケーション名
+Coffee Post
+# アプリケーション概要
+商品を購入したことのある珈琲ショップの情報と、商品情報を他の人とシェアできるアプリ
+# URL
+XXX
+# テスト用アカウント
+- Basic認証ID：XXXX
+- Basic認証パスワード：XXXX
+- メールアドレス：XXXXX
+- パスワード：a123456
 
-## User
+# 利用方法
 
-| Column             | Type   | Options                   |
-| ------------------ | ------ | ------------------------- |
-| nickname           | string | null: false, unique: true |
-| email              | string | null: false               |
-| encrypted_password | string | null: false               |
+# アプリケーションを作成した背景
+美味しいコーヒーの製品を売るお店は数多くあります。しかし、お店も無数にあるため、それぞれのお店に行くことをしなければ売っている商品の違いを知ることはできません。よく仕事で出張に
+行く友人が出張先にあるお店でコーヒー豆を買ってきてくれることがあります。どこで買ってきたか初めは覚えているものの、時間と共にお店もコーヒー豆のことも忘れてしまうそうです。
+そこで忘れてしまうくらいならどこかで、どんな製品を購入したか記録があれば覚えていなくても、すぐに思い出すことができるのではと、考えました。
+記録するだけではなく、他者と共有できたりすれば、共有された情報をもとにお店へ訪れるなどできればお店に対しても貢献できると思います。
 
-### アソシエーション
-- has_many :productions
-- has_many :shop, dependent: :destroy
-- has_many :wish_lists, dependent: :destroy
-- belongs_to :prefectures
 
-## Wish_list
+# 洗い出した要件
 
-| Column             | Type       | Options                              |
-| ------------------ | ---------- | ------------------------------------ |
-| production_id      | references | null: null: false, foreign_key: true |
-| user_id            | references | null: null: false, foreign_key: true |
+# 実装した機能についての画像やGIFおよび説明
 
-### アソシエーション
-- belongs_to :user
-- belongs_to :production
+# 実装予定の機能
 
-## Shop
+# データベース設計
 
-| Column             | Type       | Options                   |
-| ------------------ | ---------- | ------------------------- |
-| user_id            | references | null: false  unique: true |
-| shop_name          | string     | null: false               |
-| shop_url           | string     | null: false               |
-| prefectures_id     | integer    | null: false               |
-| shi_ku_gun         | string     |                           |
-| chome_banchi       | string     |                           |
+# 画面遷移図
 
-### アソシエーション
-- has_one :production
-- belongs_to :prefectures
-- belongs_to :user
+# 開発環境
 
-## Production
+# ローカルでの動作方法
 
-| Column                        | Type       | Options                   |
-| ----------------------------- | ---------- | ------------------------- |
-| user_id                       | references | null: false  unique: true |
-| shop_id                       | references | null: false  unique: true |
-| production_name               | string     | null: false               |
-| purchase_date                 | date       | null: false               |
-| coffee_beans_type             | string     |                           |
-| farm_name                     | string     |                           |
-| product_report                | text       |                           |
-| product_category_id           | integer    | null: false               |
-| coffee_blend_id               | integer    | null: false               |
-| degree_of_roasting_id         | integer    | null: false               |
-| country_of_origin_id          | integer    | null: false               |
-| carefully_selected_method_id  | integer    | null: false               |
-| sweetness_id                  | integer    | null: false               |
-| acidity_id                    | integer    | null: false               |
-| bitter_taste_id               | integer    | null: false               |
-| flavor_id                     | integer    | null: false               |
-
-### アソシエーション
-- has_many :production_tags
-- has_many_attached :images
-- has_many :user, optional: true
-- belongs_to :product_category
-- belongs_to :coffee_blend
-- belongs_to :degree_of_roasting
-- belongs_to :country_of_origin
-- belongs_to :carefully_selected_method
-- belongs_to :sweetness
-- belongs_to :acidity
-- belongs_to :bitter_taste
-- belongs_to :flavor
-
-## Production_tag
-
-| Column         | Type       | Options                   |
-| -------------- | ---------- | ------------------------- |
-| tag_id         | references | null: false  unique: true |
-| production_id  | references | null: false  unique: true |
-
-### アソシエーション
-- belongs_to :tag
-- belongs_to :production
-
-## Tag
-
-| Column         | Type       | Options                   |
-| -------------- | ---------- | ------------------------- |
-| tag_id         | references | null: false  unique: true |
-| production_id  | references | null: false  unique: true |
-
-### アソシエーション
-- has_many :production_tags
+# 工夫したポイント
