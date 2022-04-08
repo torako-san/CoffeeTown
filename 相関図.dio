@@ -1304,7 +1304,7 @@
                 <mxCell id="473" value="has_many :production_tags" style="text;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;strokeColor=default;" parent="470" vertex="1">
                     <mxGeometry y="210" width="288" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="484" value="has_many_attached :image" style="text;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;strokeColor=default;" parent="470" vertex="1">
+                <mxCell id="484" value="has_one_attached :image" style="text;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;strokeColor=default;" parent="470" vertex="1">
                     <mxGeometry y="240" width="288" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="480" value="belongs_to :product_category" style="text;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;strokeColor=default;" parent="470" vertex="1">
