@@ -51,15 +51,16 @@
     <h2 class="items-sell-title my-2">■商品情報を入力</h2>
 
     <%# 商品画像 %>
-   <div class="container my-3 w-75 border">
+   <div class="container my-3 w-50 justify-content-center border">
       <div class="weight-bold-text">
         <h3 class="shop">◎商品画像</h3>
         <span class="indispensable">必須</span>
         <label for="file" class="form-label">ファイル（複数選択可）</label>
       </div>
       <div class="input-group input-group-sm mb-3">
-        <%= f.file_field :images, id:"FormFile", class:"form-control", name: 'production[images][]', data: {index: 0}, multiple: true %>
+        <%= f.file_field :image, id:"FormFile", class:"form-control" %>
       </div>
+      <div id="new-image"></div>
     </div>
     <%# /商品画像 %>
 
@@ -67,18 +68,21 @@
       <div class="form my-3">
         <div class="weight-bold-text">
           <h3 class="shop">◎商品カテゴリー</h3>
+          <span class="indispensable">必須</span>
         </div>
         <%= f.collection_select(:product_category_id, ProductCategory.all, :id, :name, {}, {class:"select-box", id:"product-category"}) %>
       </div>
       <div class="form my-3">
         <div class="weight-bold-text">
           <h3 class="shop">◎商品名</h3>
+          <span class="indispensable">必須</span>
         </div>
         <%= f.text_field :production_name, class:"production_name", id:"production-name", placeholder:"例）アバカペーパードリッパー１００枚入り", maxlength:"40" %>
       </div>
       <div class="form my-3">
         <div class="weight-bold-text">
           <h3 class="shop">◎購入日</h3>
+          <span class="indispensable">必須</span>
         </div>
       <%= f.date_field :purchase_date, class:"purchase_date",  id:"purchase-date" %>
       </div>
@@ -98,7 +102,7 @@
         <div class="weight-bold-text">
           <h3 class="shop">◎豆の品種</h3>
         </div>
-        <%= f.text_field :coffee_beans_type, class:"shops-text", id:"coffee-beans-type", placeholder:"例）アラビカ", maxlength:"15" %>
+        <%= f.text_field :coffee_beans_type_id, class:"shops-text", id:"coffee-beans-type", placeholder:"例）アラビカ", maxlength:"15" %>
       </div>
       <div class="form my-3">
         <div class="weight-bold-text">
