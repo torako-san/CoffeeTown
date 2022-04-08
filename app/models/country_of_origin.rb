@@ -1,6 +1,6 @@
 class CountryOfOrigin < ActiveHash::Base
   self.data = [
-    { id: 1, name: '---' },
+    { id: 1, name: '不明' },
     { id: 2, name: 'イエメン' },
     { id: 3, name: 'インド' },
     { id: 4, name: 'インドネシア' },

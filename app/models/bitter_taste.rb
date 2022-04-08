@@ -1,6 +1,6 @@
 class BitterTaste < ActiveHash::Base
   self.data = [
-    { id: 1, name: '---' },
+    { id: 1, name: '未評価' },
     { id: 2, name: '★★★★★' },
     { id: 3, name: '★★★★☆' },
     { id: 4, name: '★★★☆☆' },
