@@ -9,17 +9,17 @@ class ShopProduction
     validates :purchase_date
   end
 
-  with_options other_than: 0 do
-    validates :prefectures, numericality: { message: "can't be blank"}
-    validates :product_category, numericality: { message: "can't be blank"}
-    validates :coffee_blend, numericality: { message: "can't be blank"}
-    validates :degree_of_roasting, numericality: { message: "can't be blank"}
-    validates :country_of_origin, numericality: { message: "can't be blank"}
-    validates :carefully_selected_method, numericality: { message: "can't be blank"}
-    validates :sweetness, numericality: { message: "can't be blank"}
-    validates :acidity, numericality: { message: "can't be blank"}
-    validates :bitter_taste, numericality: { message: "can't be blank"}
-    validates :flavor, numericality: { message: "can't be blank"}
+  with_options numericality: {other_than: 0, message: "can't be blank"}  do
+    validates :prefectures 
+    validates :product_category
+    validates :coffee_blend
+    validates :degree_of_roasting
+    validates :country_of_origin
+    validates :carefully_selected_method
+    validates :sweetness
+    validates :acidity
+    validates :bitter_taste
+    validates :flavor
   end
 
   def save
