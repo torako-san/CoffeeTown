@@ -6,7 +6,5 @@ class User < ApplicationRecord
   
   validates :nickname, presence: true
 
-  with_options dependent: :destroy do
-    has_many :shops
-  end
+  has_many :shops
 end
