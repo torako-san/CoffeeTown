@@ -1,6 +1,6 @@
 class Production < ApplicationRecord
   belongs_to :shop
-  has_one_attached :images
+  has_one_attached :image
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :product_category
