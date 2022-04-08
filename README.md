@@ -7,9 +7,6 @@
 | nickname           | string | null: false, unique: true |
 | email              | string | null: false               |
 | encrypted_password | string | null: false               |
-| family_name        | string | null: false               |
-| given_name         | string | null: false               |
-| phone_number       | string | null: false  unique: true |
 
 ### アソシエーション
 - has_many :productions
@@ -33,7 +30,7 @@
 | Column             | Type       | Options                   |
 | ------------------ | ---------- | ------------------------- |
 | user_id            | references | null: false  unique: true |
-| name               | string     | null: false               |
+| shop_name          | string     | null: false               |
 | shop_url           | string     | null: false               |
 | prefectures_id     | integer    | null: false               |
 | shi_ku_gun         | string     |                           |
@@ -41,7 +38,6 @@
 
 ### アソシエーション
 - has_one :production
-- has_one_attached :image
 - belongs_to :prefectures
 - belongs_to :user
 
@@ -51,7 +47,7 @@
 | ----------------------------- | ---------- | ------------------------- |
 | user_id                       | references | null: false  unique: true |
 | shop_id                       | references | null: false  unique: true |
-| name                          | string     | null: false               |
+| production_name               | string     | null: false               |
 | purchase_date                 | date       | null: false               |
 | coffee_beans_type             | string     |                           |
 | farm_name                     | string     |                           |
@@ -68,6 +64,8 @@
 
 ### アソシエーション
 - has_many :production_tags
+- has_many_attached :images
+- has_many :user, optional: true
 - belongs_to :product_category
 - belongs_to :coffee_blend
 - belongs_to :degree_of_roasting
@@ -77,7 +75,6 @@
 - belongs_to :acidity
 - belongs_to :bitter_taste
 - belongs_to :flavor
-- belongs_to :user
 
 ## Production_tag
 

@@ -17,3 +17,16 @@
   -moz-user-select: none;
   user-select: none;
 }
+
+.title {
+  text-decoration: none;
+}
+
+.indispensable {
+  color: red
+}
+
+.new-img {
+  width: 200px;
+  object-fit: cover;
+}
