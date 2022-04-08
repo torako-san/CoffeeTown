@@ -25,3 +25,8 @@
 .indispensable {
   color: red
 }
+
+.new-img {
+  width: 500px;
+  object-fit: cover;
+}
