@@ -9,19 +9,8 @@
 
     <%= render 'shared/error_messages', model: f.object %>
     
-    <%# 店舗画像 %>
-   <div class="container my-4 w-50 justify-content-center border">
-      <div class="weight-bold-text">
-        <h3 class="shop">◎店舗画像</h3>
-        <span class="indispensable">必須</span>
-      </div>
-      <div class="input-group input-group-sm mb-3">
-        <%= f.file_field :image, id:"item-image", class:"form-control" %>
-      </div>
-    </div>
-    <%# /店舗画像 %>
     <%# 店舗情報 %>
-    <div class="new-shops my-3 border">
+    <div class="new-shops my-3">
       <div class="weight-bold-text">
         <h3 class="shop">◎店舗名</h3>
         <span class="indispensable">必須</span>
@@ -31,7 +20,7 @@
         <div class="weight-bold-text">
           <h3 class="shop">◎店舗URL</h3>
         </div>
-        <%= f.text_field :shop_url, class:"shops-text", id:"shop-url", placeholder:"例）https://www.xxcoffeexx.jp" ,maxlength:"30" %>
+        <%= f.text_field :shop_url, class:"shops-text", id:"shop-url", placeholder:"例）https://www.xxcoffeexx.jp" ,maxlength:"40" %>
       </div>
       <div class="shops-detail my-3">
         <div class="weight-bold-text">
@@ -58,6 +47,7 @@
     </div>
     <%# /店舗情報 %>
 
+   <div class="new-production my-3 border">
     <h2 class="items-sell-title my-2">■商品情報を入力</h2>
 
     <%# 商品画像 %>
@@ -65,10 +55,12 @@
       <div class="weight-bold-text">
         <h3 class="shop">◎商品画像</h3>
         <span class="indispensable">必須</span>
+        <label for="file" class="form-label">ファイル（複数選択可）</label>
       </div>
       <div class="input-group input-group-sm mb-3">
-        <%= f.file_field :image, id:"item-image", class:"form-control" %>
+        <%= f.file_field :image, id:"FormFile", class:"form-control", multiple: true %>
       </div>
+      <div id="new-image"></div>
     </div>
     <%# /商品画像 %>
 
@@ -83,7 +75,7 @@
         <div class="weight-bold-text">
           <h3 class="shop">◎商品名</h3>
         </div>
-        <%= f.text_field :production_name, class:"production_name", id:"production-name", placeholder:"例）アバカペーパードリッパー１００枚入り", maxlength:"30" %>
+        <%= f.text_field :production_name, class:"production_name", id:"production-name", placeholder:"例）アバカペーパードリッパー１００枚入り", maxlength:"40" %>
       </div>
       <div class="form my-3">
         <div class="weight-bold-text">
@@ -160,6 +152,7 @@
         </div>
         <%= f.text_area :product_report, rows:"3", class:"form-control w-50 m-auto", id:"product-report", placeholder:"例）" ,maxlength:"300" %>
       </div>
+    </div>
     <%# /商品情報 %>
 
     <%# 下部ボタン %>
