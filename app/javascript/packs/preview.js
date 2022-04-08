@@ -1,4 +1,4 @@
-if (document.URL.match(/new/)) {
+if (document.URL.match(/new/) || document.URL.match(/shops$/)) {
   document.addEventListener('DOMContentLoaded', () => {
     const createImageHTML = (blob) => {
       const imageElement = document.getElementById('new-image');
