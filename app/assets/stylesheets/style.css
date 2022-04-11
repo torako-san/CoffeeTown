@@ -9,7 +9,12 @@
   font-weight: 700;
 }
 
-/* ショップ画像部分 */
+/* メイン部分 */
+.sub-text {
+  color: black;
+}
+
+/* 投稿画像部分 */
 .bd-placeholder-img {
   font-size: 1.125rem;
   text-anchor: middle;
@@ -29,4 +34,10 @@
 .new-img {
   width: 200px;
   object-fit: cover;
+}
+
+.top-img {
+  background-image: url("section-img.jpg");
+  background-size: cover;
+  background-position: center;
 }

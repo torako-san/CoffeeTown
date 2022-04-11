@@ -2,6 +2,7 @@ class ShopsController < ApplicationController
   before_action :authenticate_user!, except: :index
 
   def index
+    @shop = Shop.all
   end
 
   def new
