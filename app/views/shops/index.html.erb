@@ -1,23 +1,51 @@
 <html>
   <body>
     <main>
-      <section class="py-5 text-center container">
-        <div class="row py-lg-5">
-          <div class="col-lg-6 col-md-8 mx-auto">
-            <h1 class="fw-light">Album example</h1>
-              <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
-              <p>
-                <a href="#" class="btn btn-primary my-2">Main call to action</a>
-                <a href="#" class="btn btn-secondary my-2">Secondary action</a>
-              </p>
+      <section class="py-1 text-center container">
+          <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+              <h2 class="fw-light">最高のコーヒーをシェアしよう</h2>
+                <p class="lead text-muted">あなたの最高のお店や美味しい珈琲を紹介しませんか.</p>
+                <p>
+                  <%= link_to 'Main call to action', root_path, class:"btn btn-primary my-2" %>
+                  <%= link_to 'Secondary action', root_path, class:"btn btn-secondary my-2" %>
+                </p>
+            </div>
           </div>
-        </div>
       </section>
-      <div class="shop-list">
-      <%= render partial: 'index' %>
-      </div>
 
+      <%# 店舗一覧 %>
+      <% if @shop.present? %>
+          <div class="shop-list py-5 bg-light">
+            <div class="container">
+            <div class="row">
+              <% @shop.each do |shop| %>
+                <div class="col-lg-4 col-md-6 mb-4">
+                  <div class="col">
+                    <div class="card shadow-sm">
+                      <%= image_tag shop.production.image, class:"production-img bd-placeholder-img card-img-top", width:"100%", height:"225", xmlns:"http://www.w3.org/2000/svg", role:"img", preserveAspectRatio:"xMidYMid slice", focusable:"false" if shop.production.image.attached? %>
+
+                        <div class="card-body">
+                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                          </div>
+                          <%= link_to shop.user.nickname, root_path, class:"text-muted" %>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>  
+      <% else %>
+        <%= render partial: 'index' %>
+      <% end %>
     </main> 
-
+    <%# /店舗一覧 %>
   </body>
 </html>
