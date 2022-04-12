@@ -23,10 +23,20 @@
   user-select: none;
 }
 
+
+/* ヘッダー */
 .title {
   text-decoration: none;
 }
 
+/*　メイン　*/
+.top-img {
+  background-image: url("section-img.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+/* 投稿入力ページ　*/
 .indispensable {
   color: red
 }
@@ -36,8 +46,8 @@
   object-fit: cover;
 }
 
-.top-img {
-  background-image: url("section-img.jpg");
-  background-size: cover;
-  background-position: center;
+/* 一覧ページ */
+.shop-text {
+  text-decoration: none;
+  color: black;
 }
