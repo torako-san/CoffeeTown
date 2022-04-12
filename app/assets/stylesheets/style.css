@@ -45,3 +45,9 @@
   width: 200px;
   object-fit: cover;
 }
+
+/* 一覧ページ */
+.shop-text {
+  text-decoration: none;
+  color: black;
+}
