@@ -23,6 +23,8 @@
               <dd class="col-sm-9 my-2 border-bottom border-2"><%= @shop.production.production_name%></dd>
               <dt class="col-sm-3 my-2 border-bottom border-2">購入日</dt>
               <dd class="col-sm-9 my-2 border-bottom border-2"><%= @shop.production.purchase_date%></dd>
+              <dt class="col-sm-3 my-2 border-bottom border-2">投稿者</dt>
+              <dd class="col-sm-9 my-2 border-bottom border-2"><%= link_to @shop.user.nickname, "#", class:"text-muted" %></dd>
             </dl>
           </div>
         </div>
