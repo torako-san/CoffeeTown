@@ -1,5 +1,5 @@
 class ProductionsController < ApplicationController
-  def index
-    @production = Production.all
+  def show
+    @production = Production.find(params[:shop_id])
   end
 end
