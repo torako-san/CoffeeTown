@@ -1,16 +1,17 @@
 <html>
   <body>
-    <div class="shop-show py-5 bg-light">  
-      <div class="container-xl">
-        <div class="row justify-content-center my-5">
-          <div class="col-4 mx-4">
-            <%# <%= link_to image_tag(@shop.production.image, class:"production-img bd-placeholder-img card-img-top", width:"100%", height:"225"),"#" %>
+    <div class="production-show py-5 bg-light">  
+      <div class="container">
+        <div class="d-flex flex-column align-items-center">
+          <div>
+            <%= image_tag @production.image, class:"production-img bd-placeholder-img card-img-top mb-4", width:"100%", height:"350" %>
           </div>
-          <div class="col-4 mx-4">
-            <dl class="row">
-            <dt class="col-sm-3 my-2 border-bottom border-2">店名</dt>
-            <dd class="col-sm-9 my-2 border-bottom border-2"></dd>
-            </dl>
+        </div> 
+          <div class="text-center mt-4">
+            <dl class="row justify-content-center">
+              <dt class="col-sm-3 border border-end-0 border-dark">商品名</dt>
+              <dd class="col-sm-7 my-auto border border-dark"><%= @production.production_name %></dd>
+            </dl> 
           </div>
         </div>
       </div>
