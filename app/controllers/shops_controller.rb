@@ -20,7 +20,7 @@ class ShopsController < ApplicationController
   end
 
   def show
-    @shop = Shop.find[:shop_id]
+    @shop = Shop.find(params[:id])
   end
 
   private
