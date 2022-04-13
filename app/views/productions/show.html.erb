@@ -1,0 +1,34 @@
+<html>
+  <body>
+    <div class="shop-show py-5 bg-light">  
+      <div class="container-xl">
+        <div class="row justify-content-center my-5">
+          <div class="col-4 mx-4">
+            <%= link_to image_tag(@shop.production.image, class:"production-img bd-placeholder-img card-img-top", width:"100%", height:"225"),"#" %>
+            <p class="text-center text-muted">>商品詳細を知りたい方は画像をクリック<</p>
+          </div>
+          <div class="col-4 mx-4">
+            <dl class="row">
+            <dt class="col-sm-3 my-2 border-bottom border-2">店名</dt>
+            <dd class="col-sm-9 my-2 border-bottom border-2"><%= @shop.shop_name %></dd>
+            <dt class="col-sm-3 my-2 border-bottom border-2">店舗住所</dt>
+            <dd class="col-sm-9 my-2 border-bottom border-2">
+                <p><%= @shop.prefectures.name %></p>
+                <p><%= @shop.shi_ku_gun %></p>
+                <p><%= @shop.chome_banchi %></p>
+              </dd>
+              <dt class="col-sm-3 my-2 border-bottom border-2">店舗URL</dt>
+              <dd class="col-sm-9 my-2 border-bottom border-2"><%= @shop.shop_url%></dd>
+              <dt class="col-sm-3 my-2 border-bottom border-2">商品名</dt>
+              <dd class="col-sm-9 my-2 border-bottom border-2"><%= @shop.production.production_name%></dd>
+              <dt class="col-sm-3 my-2 border-bottom border-2">購入日</dt>
+              <dd class="col-sm-9 my-2 border-bottom border-2"><%= @shop.production.purchase_date%></dd>
+              <dt class="col-sm-3 my-2 border-bottom border-2">投稿者</dt>
+              <dd class="col-sm-9 my-2 border-bottom border-2"><%= link_to @shop.user.nickname, "#", class:"text-muted" %></dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
