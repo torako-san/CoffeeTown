@@ -29,14 +29,14 @@
   text-decoration: none;
 }
 
-/*　メイン　*/
+/* メイン */
 .top-img {
   background-image: url("section-img.jpg");
   background-size: cover;
   background-position: center;
 }
 
-/* 投稿入力ページ　*/
+/* 投稿入力ページ */
 .indispensable {
   color: red
 }
