@@ -38,10 +38,10 @@ https://coffee-post.herokuapp.com/
 - タグ機能
 - ユーザーフォロー機能
 # データベース設計
-[![Image from Gyazo](https://i.gyazo.com/d5cddb6a2cca9f4e4cf5acefa8116755.png)](https://gyazo.com/d5cddb6a2cca9f4e4cf5acefa8116755)
+[![Image from Gyazo](https://i.gyazo.com/2e14b4710b2069c36befc1eba62cd5b2.png)](https://gyazo.com/2e14b4710b2069c36befc1eba62cd5b2)
 
 # 画面遷移図
-[![Image from Gyazo](https://i.gyazo.com/dbd4f5b3c20471290ad24254e0d45ebf.png)](https://gyazo.com/dbd4f5b3c20471290ad24254e0d45ebf)
+[![Image from Gyazo](https://i.gyazo.com/054d63e8aa3192937316805725a7052e.png)](https://gyazo.com/054d63e8aa3192937316805725a7052e)
 
 # 開発環境
 ### フロントエンド

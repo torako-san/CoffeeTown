@@ -1,5 +1,5 @@
 class ShopsController < ApplicationController
-  before_action :authenticate_user!, except: :index
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     @shop = Shop.all.order('created_at DESC')
@@ -19,6 +19,11 @@ class ShopsController < ApplicationController
     end
   end
 
+  def show
+    @shop = Shop.find(params[:id])
+  end
+
+  private
   def shop_params
     params.require(:shop_production).permit(:shop_name, :shi_ku_gun, :chome_banchi, :shop_url, :prefectures_id, :production_name,
        :purchase_date, :coffee_beans_type, :farm_name, :product_report, :product_category_id, :coffee_blend_id, :degree_of_roasting_id, 
