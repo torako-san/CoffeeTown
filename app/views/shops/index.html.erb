@@ -30,7 +30,7 @@
                   
                         <div class="card-body">
                           <p class="card-text">■投稿日<br><%= shop.created_at.strftime('%Y/%m/%d') %></p>
-                          <p class="card-text">■店名<br><%= link_to shop.shop_name, "#", class:"shop-text" %></p>
+                          <p class="card-text">■店名<br><%= link_to shop.shop_name, shop_path(shop.id), class:"shop-text" %></p>
                           <p class="card-text">■商品名<br><%= shop.production.production_name %></p>
                           <p class="card-text">■商品カテゴリー<br><%= shop.production.product_category.name %></p>
                         <div class="d-flex justify-content-between align-items-center">
