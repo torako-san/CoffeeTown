@@ -1,20 +1,89 @@
 <html>
   <body>
-    <div class="production-show py-5 bg-light">  
-      <div class="container">
-        <div class="d-flex flex-column align-items-center">
-          <div>
-            <%= image_tag @production.image, class:"production-img bd-placeholder-img card-img-top mb-4", width:"100%", height:"350" %>
-          </div>
-        </div> 
-          <div class="text-center mt-4">
-            <dl class="row justify-content-center">
-              <dt class="col-sm-3 fs-5 border border-end-0 border-dark">商品名</dt>
-              <dd class="col-sm-4 fs-5 my-auto border border-dark"><%= @production.production_name %></dd>
-            </dl> 
+    <div class="production-show py-5 bg-light">
+        <div class="container">
+          <div class="card d-flex flex-column align-items-center">
+            <div>
+              <%= image_tag @production.image, class:"img-responsive img-rounded card-img-top mb-4", width:"100%", height:"600" %>
+            </div>
+          </div> 
+            <div class="card text-center py-3">
+              <dl class="card-boby row justify-content-center">
+                <dt class="card-text col-sm-4 fs-5">商品カテゴリー</dt>
+                <dd class="card-text col-sm-5 fs-5"><%= @production.product_category.name %></dd>
+              </dl>
+              <dl class="card-boby row justify-content-center">
+                <dt class="card-text col-sm-4 fs-5">商品名</dt>
+                <dd class="card-text col-sm-5 fs-5"><%= @production.production_name %></dd>
+              </dl>
+
+              <%# カテゴリーがコーヒー豆の場合のみ表示させる情報 %>
+              <% if @production.product_category_id == 2 %>
+                <dl class="card-boby row justify-content-center text-lef">
+                  <dt class="card-text col-sm-4 fs-5">配合</dt>
+                  <dd class="card-text col-sm-5 fs-5"><%= @production.coffee_blend.name %></dd>
+                </dl>
+                <dl class="card-boby row justify-content-center">
+                  <dt class="card-text col-sm-4 fs-5">焙煎度</dt>
+                  <dd class="card-text col-sm-5 fs-5"><%= @production.degree_of_roasting.name %></dd>
+                </dl>
+                <dl class="card-boby row justify-content-center">
+                  <dt class="card-text col-sm-4 fs-5">生産国</dt>
+                  <dd class="card-text col-sm-5 fs-5"><%= @production.country_of_origin.name %></dd>
+                </dl>
+
+                <%# 入力がない場合表示させない情報 %>
+                <% if @production.farm_name.present? && @production.coffee_beans_type.present? %>
+                  <dl class="card-boby row justify-content-center">
+                    <dt class="card-text col-sm-4 fs-5">農場名</dt>
+                    <dd class="card-text col-sm-5 fs-5"><%= @production.farm_name %></dd>
+                  </dl>
+                  <dl class="card-boby row justify-content-center">
+                    <dt class="card-text col-sm-4 fs-5">品種</dt>
+                    <dd class="card-text col-sm-5 fs-5"><%= @production.coffee_beans_type %></dd>
+                  </dl>
+                <% end %>
+                <%# /入力がない場合表示させない情報 %>
+
+                <dl class="card-boby row justify-content-center">
+                  <dt class="card-text col-sm-4 fs-5">精選方法</dt>
+                  <dd class="card-text col-sm-5 fs-5"><%= @production.carefully_selected_method.name %></dd>
+                </dl>
+                <dl class="card-boby row justify-content-center">             
+                <dt class="card-text col-sm-4 fs-5">味の体感チャート</dt>
+                  <dd class="col-sm-5">
+                    <dl class="card-boby row">
+                      <dt class="card-text col-sm-4 fs-5">甘味</dt>
+                      <dd class="card-text col-sm-8 fs-5"><%= @production.sweetness.name %></dd>
+                    </dl>
+                    <dl class="card-boby row">
+                      <dt class="card-text col-sm-4 fs-5">酸味</dt>
+                      <dd class="card-text col-sm-8 fs-5"><%= @production.acidity.name %></dd>
+                    </dl>
+                    <dl class="card-boby row">
+                      <dt class="card-text col-sm-4 fs-5">苦味</dt>
+                      <dd class="card-text col-sm-8 fs-5"><%= @production.bitter_taste.name %></dd>
+                    </dl>
+                    <dl class="card-boby row">
+                      <dt class="card-text col-sm-4 fs-5">風味</dt>
+                      <dd class="card-text col-sm-8 fs-5"><%= @production.flavor.name %></dd>
+                    </dl>
+                  </dd>             
+                </dl>
+              <% end %>
+              <%# /カテゴリーがコーヒー豆の場合のみ表示させる情報 %>
+              
+              <%# 感想が空の場合表示を消す記述 %>
+              <% if @production.product_report.present? %>
+                <dl class="card-boby row justify-content-center">
+                  <dt class="card-text col-sm-3 fs-5">商品の感想</dt>
+                  <dd class="card-text col-sm-4 fs-5"><%= @production.product_report %></dd>
+                </dl>
+              <% end %> 
+              <%# /感想が空の場合表示を消す記述 %>
+            </div>
           </div>
         </div>
       </div>
-    </div>
   </body>
 </html>
