@@ -2,13 +2,13 @@
   <body>
     <div class="shop-show py-5 bg-light">  
       <div class="container-xl">
-        <div class="row justify-content-center my-5">
-          <div class="col-4 mx-4">
-            <%= link_to image_tag(@shop.production.image, class:"production-img bd-placeholder-img card-img-top", width:"100%", height:"225"), shop_production_path(@shop.production.id) %>
+        <div class="row justify-content-center align-items-center my-5">
+          <div class="card col-4 p-5">
+            <%= link_to image_tag(@shop.production.image, class:"card-boby production-img bd-placeholder-img card-img-top", width:"100%", height:"280"), shop_production_path(@shop.production.id) %>
             <p class="text-center text-muted">>商品詳細を知りたい方は画像をクリック<</p>
           </div>
-          <div class="col-4 mx-4">
-            <dl class="row">
+          <div class="card col-4 mx-4">
+            <dl class="card-body row">
             <dt class="col-sm-3 my-2 border-bottom border-2">店名</dt>
             <dd class="col-sm-9 my-2 border-bottom border-2"><%= @shop.shop_name %></dd>
             <dt class="col-sm-3 my-2 border-bottom border-2">店舗住所</dt>
