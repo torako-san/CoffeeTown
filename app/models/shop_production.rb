@@ -4,7 +4,6 @@ class ShopProduction
 
   with_options presence: true do
     validates :shop_name
-    validates :shop_url
     validates :production_name
     validates :purchase_date
     validates :image

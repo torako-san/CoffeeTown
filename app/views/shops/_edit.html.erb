@@ -1,0 +1,51 @@
+<div class="form py-3">
+  <h2 class="shop-title">■店舗の情報を修正</h2>
+  <%= form_with model: @shop, url: shop_path, local: true do |f| %>
+
+    <%= render 'shared/error_messages', model: f.object %>
+      
+    <%# 店舗情報 %>
+    <div class="new-shops my-4">
+      <div class="weight-bold-text mt-2">
+        <h3 class="shop">◎店舗名</h3>
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_field :shop_name, class:"shops-text mb-3", id:"shop-name", placeholder:"店舗名", maxlength:"30" %>
+      <div class="shops-url my-3">
+        <div class="weight-bold-text">
+          <h3 class="shop">◎店舗URL</h3>
+        </div>
+        <%= f.text_field :shop_url, class:"shops-text mb-3", id:"shop-url", placeholder:"例）https://www.xxcoffeexx.jp" ,maxlength:"40" %>
+      </div>
+      <div class="shops-detail my-3">
+        <div class="weight-bold-text">
+          <h3 class="shop">◎店舗の住所</h3>
+          <div class="row gy-2 gx-3 align-items-center justify-content-center">
+            <div class="col-auto">
+              <div class="weight-bold-text ">
+                ▽都道府県
+              <span class="indispensable">必須</span>
+            </div>
+            <%= f.collection_select(:prefectures_id, Prefectures.all, :id, :name, {}, {class:"select-box", id:"shop-prefectures"}) %>
+          </div>
+          <div class="col-auto">
+            <div class="weight-bold-text">▽市町村</div>
+            <%= f.text_field :shi_ku_gun, class:"shops-text", id:"shop-city", placeholder:"〇〇市〇〇町", maxlength:"20" %>
+          </div>
+          <div class="col-auto">
+            <div class="weight-bold-text">▽丁目・番地</div>
+            <%= f.text_field :chome_banchi, class:"shops-text", id:"shop-line", placeholder:"〇丁目〇番地", maxlength:"20" %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%# /店舗情報 %>
+    
+    <%# 下部ボタン %>
+    <div class="post-ideda btn-lg mt-5">
+      <%= f.submit "更新する" ,class:"request-btn" %>
+    </div>
+    <%# /下部ボタン %>
+
+  <% end %>
+</div>

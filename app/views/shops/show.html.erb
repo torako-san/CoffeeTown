@@ -28,6 +28,19 @@
               <dd class="col-sm-9 my-2 border-bottom border-2"><%= @shop.production.purchase_date%></dd>
               <dt class="col-sm-3 my-2 border-bottom border-2">投稿者</dt>
               <dd class="col-sm-9 my-2 border-bottom border-2"><%= link_to @shop.user.nickname, "#", class:"text-muted" %></dd>
+              
+              <%# 投稿者のみに表示する機能 %>
+              <% if user_signed_in? && current_user.id == @shop.user_id %>
+                <p class="user-text my-3 fs-5 text-danger">
+                  <strong>投稿者専用機能</strong>
+                </p>
+                <div class="btn-group">
+                  <%= link_to 'Edit', edit_shop_path(@shop.id), class:"btn btn-sm btn-outline-secondary" %>
+                  <%= link_to 'Delte', "", class:"btn btn-sm btn-outline-secondary" %>
+                </div>
+              <% end %>
+              <%# /投稿者のみに表示する機能 %>
+
             </dl>
           </div>
         </div>
