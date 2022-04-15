@@ -1,0 +1,157 @@
+<div class="form py-3">
+  <h2 class="shop-title">■店舗の情報を入力</h2>
+  <%= form_with model: @shop_production, url: shops_path, local: true do |f| %>
+
+    <%= render 'shared/error_messages', model: f.object %>
+      
+    <%# 店舗情報 %>
+    <div class="new-shops my-4">
+      <div class="weight-bold-text">
+        <h3 class="shop">◎店舗名</h3>
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_field :shop_name, class:"shops-text", id:"shop-name", placeholder:"店舗名", maxlength:"30" %>
+      <div class="shops-url my-3">
+        <div class="weight-bold-text">
+          <h3 class="shop">◎店舗URL</h3>
+        </div>
+        <%= f.text_field :shop_url, class:"shops-text", id:"shop-url", placeholder:"例）https://www.xxcoffeexx.jp" ,maxlength:"40" %>
+      </div>
+      <div class="shops-detail my-3">
+        <div class="weight-bold-text">
+          <h3 class="shop">◎店舗の住所</h3>
+          <div class="row gy-2 gx-3 align-items-center justify-content-center">
+            <div class="col-auto">
+              <div class="weight-bold-text ">
+                ▽都道府県
+              <span class="indispensable">必須</span>
+            </div>
+            <%= f.collection_select(:prefectures_id, Prefectures.all, :id, :name, {}, {class:"select-box", id:"shop-prefectures"}) %>
+          </div>
+          <div class="col-auto">
+            <div class="weight-bold-text">▽市町村</div>
+            <%= f.text_field :shi_ku_gun, class:"shops-text", id:"shop-city", placeholder:"〇〇市〇〇町", maxlength:"20" %>
+          </div>
+          <div class="col-auto">
+            <div class="weight-bold-text">▽丁目・番地</div>
+            <%= f.text_field :chome_banchi, class:"shops-text", id:"shop-line", placeholder:"〇丁目〇番地", maxlength:"20" %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%# /店舗情報 %>
+
+    <%# 商品情報 %>
+    <div class="new-production my-4">
+      <h2 class="title-text mt-4">■商品情報を入力</h2>
+      <div class="card container my-3 w-50 justify-content-center">
+        <div class="card-body weight-bold-text">
+          <h3 class="shop">◎商品画像</h3>
+          <span class="indispensable">必須</span>
+        </div>
+        <div class="card-body input-group input-group-sm mb-3">
+          <%= f.file_field :image, id:"FormFile", class:"card-text form-control" %>
+        </div>
+        <div id="new-image"></div>
+      </div>
+      
+      <div class="form my-3">
+        <div class="weight-bold-text">
+          <h3 class="shop">◎商品カテゴリー</h3>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:product_category_id, ProductCategory.all, :id, :name, {}, {class:"select-box", id:"product-category"}) %>
+      </div>
+      <div class="form my-3">
+        <div class="weight-bold-text">
+          <h3 class="shop">◎商品名</h3>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_field :production_name, class:"production_name", id:"production-name", placeholder:"例）アバカペーパードリッパー１００枚入り", maxlength:"40" %>
+      </div>
+      <div class="form my-3">
+        <div class="weight-bold-text">
+          <h3 class="shop">◎購入日</h3>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.date_field :purchase_date, class:"purchase_date",  id:"purchase-date" %>
+      </div>
+      <div class="form my-3">
+        <div class="weight-bold-text">
+          <h3 class="shop">◎配合</h3>
+        </div>
+        <%= f.collection_select(:coffee_blend_id, CoffeeBlend.all, :id, :name, {}, {class:"select-box", id:"coffee-blend"}) %>
+      </div>
+      <div class="form my-3">
+        <div class="weight-bold-text">
+          <h3 class="shop">◎生産国</h3>
+        </div>
+        <%= f.collection_select(:country_of_origin_id, CountryOfOrigin.all, :id, :name, {}, {class:"select-box", id:"coffee-blend"}) %>
+      </div>
+      <div class="form my-3">
+        <div class="weight-bold-text">
+          <h3 class="shop">◎豆の品種</h3>
+        </div>
+        <%= f.text_field :coffee_beans_type_id, class:"shops-text", id:"coffee-beans-type", placeholder:"例）アラビカ", maxlength:"15" %>
+      </div>
+      <div class="form my-3">
+        <div class="weight-bold-text">
+          <h3 class="shop">◎農場名</h3>
+        </div>
+        <%= f.text_field :farm_name, class:"farm_name", id:"farm-name", placeholder:"例）〇〇農園", maxlength:"15" %>
+      </div>
+      <div class="form my-3">
+        <div class="weight-bold-text">
+          <h3 class="shop">◎精選方法</h3>
+        </div>
+        <%= f.collection_select(:carefully_selected_method_id, CarefullySelectedMethod.all, :id, :name, {}, {class:"select-box", id:"coffee-blend"}) %>
+      </div>
+      <div class="form my-3">
+        <div class="weight-bold-text">
+          <h3 class="shop">◎焙煎度</h3>
+        </div>
+        <%= f.collection_select(:degree_of_roasting_id, DegreeOfRoasting.all, :id, :name, {}, {class:"select-box", id:"coffee-blend"}) %>
+      </div>
+      <div class="taste my-3">
+        <div class="form my-3">
+          <div class="weight-bold-text">
+            <h3 class="shop">◎味の体感</h3>
+            <h4 class="shop">▽甘味</h4>
+          </div>
+          <%= f.collection_select(:sweetness_id, Sweetness.all, :id, :name, {}, {class:"select-box", id:"coffee-blend"}) %>
+        </div>
+        <div class="form my-3">
+          <div class="weight-bold-text">
+            <h4 class="shop">▽酸味</h4>
+          </div>
+          <%= f.collection_select(:acidity_id, Acidity.all, :id, :name, {}, {class:"select-box", id:"coffee-blend"}) %>
+        </div>
+        <div class="form my-3">
+          <div class="weight-bold-text">
+            <h4 class="shop">▽苦味</h4>
+          </div>
+          <%= f.collection_select(:bitter_taste_id, BitterTaste.all, :id, :name, {}, {class:"select-box", id:"coffee-blend"}) %>
+        </div>
+        <div class="form my-3">
+          <div class="weight-bold-text">
+            <h4 class="shop">▽風味</h4>
+          </div>
+          <%= f.collection_select(:flavor_id, Flavor.all, :id, :name, {}, {class:"select-box", id:"coffee-blend"}) %>
+        </div>
+      </div>
+      <div class="produvt-report my-3">
+        <div class="weight-bold-text">
+          <h3 class="report mb-3">◎商品の感想</h3>
+        </div>
+        <%= f.text_area :product_report, rows:"3", class:"form-control w-50 m-auto", id:"product-report", placeholder:"例）" ,maxlength:"300" %>
+      </div>
+      <%# /商品情報 %>
+
+      <%# 下部ボタン %>
+      <div class="post-ideda mt-4">
+        <%= f.submit "投稿する" ,class:"sell-btn" %>
+      </div>
+      <%# /下部ボタン %>
+    </div>
+  <% end %>
+</div>
