@@ -52,7 +52,7 @@
         <div class="card-body input-group input-group-sm mb-3">
           <%= f.file_field :image, id:"FormFile", class:"card-text form-control" %>
         </div>
-        <div id="new-image"></div>
+        <div class="sample mb-3" id="new-image"></div>
       </div>
       
       <div class="form my-3">
@@ -145,13 +145,14 @@
         </div>
         <%= f.text_area :product_report, rows:"3", class:"form-control w-50 m-auto", id:"product-report", placeholder:"例）" ,maxlength:"300" %>
       </div>
-      <%# /商品情報 %>
-
-      <%# 下部ボタン %>
-      <div class="post-ideda mt-4">
-        <%= f.submit "投稿する" ,class:"sell-btn" %>
-      </div>
-      <%# /下部ボタン %>
     </div>
+    <%# /商品情報 %>
+
+    <%# 下部ボタン %>
+    <div class="post-ideda mt-4">
+      <%= f.submit "投稿する" ,class:"sell-btn" %>
+    </div>
+    <%# /下部ボタン %>
+
   <% end %>
 </div>
