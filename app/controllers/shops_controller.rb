@@ -24,9 +24,9 @@ class ShopsController < ApplicationController
   end
 
   def edit
-    # unless @shopi.user_id == current_user.id 
-    #   redirect_to root_path
-    # end
+    unless @shop.user_id == current_user.id 
+      redirect_to root_path
+    end
   end
 
   # def destroy
