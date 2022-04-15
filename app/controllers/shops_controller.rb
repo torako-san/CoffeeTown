@@ -1,6 +1,6 @@
 class ShopsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_shop, only: [:edit, :show]
+  before_action :set_shop, only: [:edit, :update, :show]
 
   def index
     @shop = Shop.all.order('created_at DESC')
@@ -24,11 +24,33 @@ class ShopsController < ApplicationController
   end
 
   def edit
+    # unless @shopi.user_id == current_user.id 
+    #   redirect_to root_path
+    # end
+  end
+
+  # def destroy
+  #   if @shop.user_id == current_user.id
+  #     @shop.destroy
+  #   end
+  #     redirect_to root_path
+  # end
+
+  def update
+    if @shop.update(shop_data_params)
+      redirect_to shop_path
+    else
+      render :edit
+    end
   end
 
   private
   def set_shop
     @shop = Shop.find(params[:id])
+  end
+
+  def shop_data_params
+    params.require(:shop).permit(:shop_name, :shi_ku_gun, :chome_banchi, :shop_url, :prefectures_id ).merge(user_id: current_user.id)
   end
 
   def shop_params
