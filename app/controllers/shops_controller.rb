@@ -23,6 +23,9 @@ class ShopsController < ApplicationController
     @shop = Shop.find(params[:id])
   end
 
+  def edit
+  end
+
   private
   def shop_params
     params.require(:shop_production).permit(:shop_name, :shi_ku_gun, :chome_banchi, :shop_url, :prefectures_id, :production_name,
