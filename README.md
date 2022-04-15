@@ -30,6 +30,11 @@ https://coffee-post.herokuapp.com/
 [要件を洗い出しシート](https://docs.google.com/spreadsheets/d/17slK2IjvGiE0_f0kYUpDYy4c0IeeOekIRQhc1366wZM/edit?usp=sharing)
 
 # 実装した機能についての画像やGIFおよび説明
+- ユーザー登録できているアカウントは投稿機能を使用できます。
+[![Image from Gyazo](https://i.gyazo.com/ca4b76d5c771d2e9f33c761b1796af5b.gif)](https://gyazo.com/ca4b76d5c771d2e9f33c761b1796af5b)
+
+- ユーザーが未登録でも投稿一覧情報や店舗の詳細情報は見ることができます。
+[![Image from Gyazo](https://i.gyazo.com/9ecc3c8b077b4ee01630d23df293cb34.gif)](https://gyazo.com/9ecc3c8b077b4ee01630d23df293cb34)
 
 # 実装予定の機能
 - 検索機能
