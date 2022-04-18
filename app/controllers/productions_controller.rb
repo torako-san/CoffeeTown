@@ -2,6 +2,9 @@ class ProductionsController < ApplicationController
   before_action :set_production, only: [:edit, :show, :update]
 
   def edit
+    unless @production.user_id == current_user.id 
+      redirect_to root_path
+    end
   end
 
   def update
