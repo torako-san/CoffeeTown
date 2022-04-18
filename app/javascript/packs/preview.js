@@ -6,24 +6,14 @@ document.addEventListener('DOMContentLoaded', function () {
   // 新規投稿・編集ページのフォームがないならここで終了。「!」は論理否定演算子。
   if (!shopForm) return null;
 
-  // input要素を取得
-  const fileField = document.querySelector('input[type="file"][name="shop_production[image]"]');
-  // input要素で値の変化が起きた際に呼び出される関数
-  fileField.addEventListener('change', function (e) {
+  // プレビュー画像を生成・表示する関数
+  const buildPreviewImage = (dataIndex, blob) => {
 
-    // 古いプレビューが存在する場合は削除
-    const alreadyPreview = document.querySelector('.preview');
-    if (alreadyPreview) {
-      alreadyPreview.remove();
-    };
-
-    console.log(e.target.files[0]);
-    const file = e.target.files[0];
-    const blob = window.URL.createObjectURL(file);
-    console.log(blob);
     // 画像を表示するためのdiv要素を生成
     const previewWrapper = document.createElement('div');
     previewWrapper.setAttribute('class', 'preview');
+    previewWrapper.setAttribute('data-index', dataIndex);
+
     // 表示する画像を生成
     const previewImage = document.createElement('img');
     previewImage.setAttribute('class', 'preview-image');
@@ -32,5 +22,52 @@ document.addEventListener('DOMContentLoaded', function () {
     // 生成したHTMLの要素をブラウザに表示させる
     previewWrapper.appendChild(previewImage);
     previewList.appendChild(previewWrapper);
-  });
+  };
+
+  const buildNewFileField = () => {
+
+    // 2枚目用のfile_fieldを作成
+    const newFileField = document.createElement('input');
+    newFileField.setAttribute('type', 'file');
+    newFileField.setAttribute('name', 'shop_production[images][]');
+
+    // 最後のfile_fieldを取得
+    const lastFileField = document.querySelector('input[type="file"][name="shop_production[images][]"]:last-child');
+    // nextDataIndex = 最後のfile_fieldのdata-index + 1
+    const nextDataIndex = Number(lastFileField.getAttribute('data-index')) + 1;
+    newFileField.setAttribute('data-index', nextDataIndex);
+
+    // 生成したfile_fieldを表示
+    const fileFieldsArea = document.querySelector('.input-images');
+    fileFieldsArea.appendChild(newFileField);
+    newFileField.classList.add('form-control');
+    newFileField.classList.add('form-control-sm');
+    newFileField.classList.add('card-text');
+    newFileField.classList.add('my-3');
+  };
+
+  // input要素で値の変化が起きた際に呼び出される関数の中身
+  const changedFileField = (e) => {
+    // data-index（何番目を操作しているか）を取得
+    const dataIndex = e.target.getAttribute('data-index');
+
+    // 古いプレビューが存在する場合は削除
+    const alreadyPreview = document.querySelector('.preview');
+    if (alreadyPreview) {
+      alreadyPreview.remove();
+    };
+
+    const file = e.target.files[0];
+    const blob = window.URL.createObjectURL(file);
+
+    buildPreviewImage(dataIndex, blob);
+    buildNewFileField();
+  };
+
+  // input要素を取得
+  const fileField = document.querySelector('input[type="file"][name="shop_production[images][]"]');
+
+  // input要素で値の変化が起きた際に呼び出される関数
+  fileField.addEventListener('change', changedFileField);
 });
+
