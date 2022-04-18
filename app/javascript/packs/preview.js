@@ -24,8 +24,8 @@ document.addEventListener('DOMContentLoaded', function () {
     previewList.appendChild(previewWrapper);
   };
 
+  // file_fieldを生成・表示する関数
   const buildNewFileField = () => {
-
     // 2枚目用のfile_fieldを作成
     const newFileField = document.createElement('input');
     newFileField.setAttribute('type', 'file');
@@ -33,9 +33,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // 最後のfile_fieldを取得
     const lastFileField = document.querySelector('input[type="file"][name="shop_production[images][]"]:last-child');
-    // nextDataIndex = 最後のfile_fieldのdata-index + 1
-    const nextDataIndex = Number(lastFileField.getAttribute('data-index')) + 1;
-    newFileField.setAttribute('data-index', nextDataIndex);
+
+    // 追加されたfile_fieldにchangeイベントをセット
+    newFileField.addEventListener("change", changedFileField);
 
     // 生成したfile_fieldを表示
     const fileFieldsArea = document.querySelector('.input-images');
