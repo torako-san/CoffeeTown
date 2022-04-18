@@ -1,6 +1,6 @@
 class ShopsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_shop, only: [:edit, :update, :show]
+  before_action :set_shop, only: [:edit, :update, :show, :destroy]
 
   def index
     @shop = Shop.all.order('created_at DESC')
