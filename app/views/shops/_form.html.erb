@@ -50,7 +50,7 @@
           <span class="indispensable">必須</span>
         </div>
         <div class="card-body input-group input-group-sm mb-3">
-          <%= f.file_field :image, class:"card-text form-control" %>
+          <%= f.file_field :images, name: 'post[images][]', data: {index: 0}, class:"card-text form-control" %>
         </div>
         <div class="mb-3" id="previews"></div>
       </div>
