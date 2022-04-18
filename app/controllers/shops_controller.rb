@@ -29,12 +29,12 @@ class ShopsController < ApplicationController
     end
   end
 
-  # def destroy
-  #   if @shop.user_id == current_user.id
-  #     @shop.destroy
-  #   end
-  #     redirect_to root_path
-  # end
+  def destroy
+    if @shop.user_id == current_user.id
+      @shop.destroy
+    end
+      redirect_to root_path
+  end
 
   def update
     if @shop.update(shop_data_params)
