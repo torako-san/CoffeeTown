@@ -41,8 +41,8 @@
   color: red
 }
 
-.new-img {
-  width: 600px;
+.preview-image {
+  width: 300px;
   object-fit: cover;
 }
 
