@@ -10,7 +10,19 @@
             <div class="card-body pt-4">
               <%= image_tag @production.image, class:"img-responsive img-rounded card-img-top mb-4", width:"100%", height:"400" %>
             </div>
+            <%# 投稿者のみに表示する機能 %>
+            <% if user_signed_in? && current_user.id == @production.user_id %>
+              <p class="user-text my-3 fs-5 text-danger">
+                <strong>投稿者専用機能</strong>
+              </p>
+              <div class="btn-group col-6 mx-auto mb-4">
+                <%= link_to 'Edit', "#", class:"btn btn-lg btn-outline-secondary" %>
+                <%= link_to 'Delte', "#", class:"btn btn-lg btn-outline-secondary" %>
+              </div>
+            <%end%>
+            <%# /投稿者のみに表示する機能 %>
           </div> 
+
           <div class="card text-center py-3">
             <dl class="card-boby row justify-content-center">
               <dt class="card-text col-sm-4 fs-5">商品カテゴリー</dt>
