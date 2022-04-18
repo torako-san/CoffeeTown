@@ -50,10 +50,12 @@
           <span class="indispensable">必須</span>
         </div>
         <div class="col input-images card-body">
-           <div class="card-text input-group mb-3">
-              <%= f.file_field :images, name: 'shop_production[images][]', data: {index: 0}, class:"card-text form-control form-control-sm mb-2" %>
-            </div>
-            <div class="my-4" id="previews"></div>
+          <div class="flex-row">
+            <div class="my-4 justify-content-around" id="previews"></div>
+          </div>
+          <div class="card-text input-group mb-3">
+            <%= f.file_field :images, name: 'shop_production[images][]', data: {index: 0}, class:"card-text form-control form-control-sm" %>
+          </div>
         </div>
       </div>
       

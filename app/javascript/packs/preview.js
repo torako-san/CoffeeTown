@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // 生成したHTMLの要素をブラウザに表示させる
     previewWrapper.appendChild(previewImage);
     previewList.appendChild(previewWrapper);
+    previewList.classList.add('my-3')
   };
 
   // file_fieldを生成・表示する関数
