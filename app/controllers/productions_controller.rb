@@ -1,7 +1,10 @@
 class ProductionsController < ApplicationController
-  before_action :set_production, only: [:edit, :show]
+  before_action :set_production, only: [:edit, :show, :update]
 
   def edit
+  end
+
+  def update
   end
 
   def show
