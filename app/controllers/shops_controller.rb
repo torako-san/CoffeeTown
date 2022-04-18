@@ -1,6 +1,6 @@
 class ShopsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_shop, only: [:edit, :update, :show]
+  before_action :set_shop, only: [:edit, :update, :show, :destroy]
 
   def index
     @shop = Shop.all.order('created_at DESC')
@@ -29,12 +29,12 @@ class ShopsController < ApplicationController
     end
   end
 
-  # def destroy
-  #   if @shop.user_id == current_user.id
-  #     @shop.destroy
-  #   end
-  #     redirect_to root_path
-  # end
+  def destroy
+    if @shop.user_id == current_user.id
+      @shop.destroy
+    end
+      redirect_to root_path
+  end
 
   def update
     if @shop.update(shop_data_params)
