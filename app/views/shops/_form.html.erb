@@ -1,6 +1,6 @@
 <div class="form py-3">
   <h2 class="shop-title">■店舗の情報を入力</h2>
-  <%= form_with model: @shop_production, url: shops_path, local: true do |f| %>
+  <%= form_with model: @shop_production, url: shops_path, id: 'new_shop', local: true do |f| %>
 
     <%= render 'shared/error_messages', model: f.object %>
       
@@ -50,9 +50,9 @@
           <span class="indispensable">必須</span>
         </div>
         <div class="card-body input-group input-group-sm mb-3">
-          <%= f.file_field :image, id:"FormFile", class:"card-text form-control" %>
+          <%= f.file_field :image, class:"card-text form-control" %>
         </div>
-        <div class="sample mb-3" id="new-image"></div>
+        <div class="mb-3" id="previews"></div>
       </div>
       
       <div class="form my-3">
