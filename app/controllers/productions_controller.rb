@@ -5,6 +5,11 @@ class ProductionsController < ApplicationController
   end
 
   def update
+    if @production.update(production_data_params)
+      redirect_to shop_production_path
+    else
+      render :edit
+    end
   end
 
   def show
