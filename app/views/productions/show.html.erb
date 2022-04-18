@@ -3,14 +3,26 @@
     <div>
       <div class="production-show py-5 bg-light">
         <h2 class="page-title text-center">
-          <strong><%= link_to @production.shop.shop_name, shop_path(@production.shop.id), class:"shop-text" %></strong>のお店で購入されました
+          <strong><%= link_to @production.shop.shop_name, shop_path(@production.shop.id), class:"shop-text" %></strong> で購入されました
         </h2>
         <div class="container">
           <div class="card d-flex flex-column align-items-center">
-            <div class="card-body pt-4">
+            <div class="card-body pt-5">
               <%= image_tag @production.image, class:"img-responsive img-rounded card-img-top mb-4", width:"100%", height:"400" %>
             </div>
+            <%# 投稿者のみに表示する機能 %>
+            <% if user_signed_in? && current_user.id == @production.user_id %>
+              <p class="user-text mb-3 fs-5 text-danger">
+                <strong>投稿者専用機能</strong>
+              </p>
+              <div class="btn-group col-6 mx-auto mb-4">
+                <%= link_to 'Edit', edit_shop_production_path, class:"btn btn-lg btn-outline-secondary" %>
+                <%= link_to 'Delte', "#", class:"btn btn-lg btn-outline-secondary" %>
+              </div>
+            <%end%>
+            <%# /投稿者のみに表示する機能 %>
           </div> 
+
           <div class="card text-center py-3">
             <dl class="card-boby row justify-content-center">
               <dt class="card-text col-sm-4 fs-5">商品カテゴリー</dt>
