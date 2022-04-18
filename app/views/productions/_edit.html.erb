@@ -1,11 +1,11 @@
-<div class="form py-3">
-  <h2 class="production-title">■商品の情報を修正</h2>
-  <%= form_with model: @production, url: shop_path, local: true do |f| %>
+<div class="form py-4">
+  <h2 class="production-title mb-3">■商品の情報を修正</h2>
+  <%= form_with model: @production, url: shop_production_path, local: true do |f| %>
 
     <%= render 'shared/error_messages', model: f.object %>
       
     <%# 店舗情報 %>
-    <div class="card container my-3 w-50 justify-content-center">
+    <div class="card container w-50 justify-content-center">
         <div class="card-body weight-bold-text">
           <h3 class="shop">◎商品画像</h3>
           <span class="indispensable">必須</span>
@@ -100,9 +100,9 @@
           <%= f.collection_select(:flavor_id, Flavor.all, :id, :name, {}, {class:"select-box", id:"coffee-blend"}) %>
         </div>
       </div>
-      <div class="produvt-report my-3">
+      <div class="produvt-report mt-3">
         <div class="weight-bold-text">
-          <h3 class="report mb-3">◎商品の感想</h3>
+          <h3 class="report">◎商品の感想</h3>
         </div>
         <%= f.text_area :product_report, rows:"3", class:"form-control w-50 m-auto", id:"product-report", placeholder:"例）" ,maxlength:"300" %>
       </div>
