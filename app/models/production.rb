@@ -12,4 +12,13 @@ class Production < ApplicationRecord
   belongs_to :acidity
   belongs_to :bitter_taste
   belongs_to :flavor
+
+  validates :product_category_id, numericality: { other_than: 1, message: "can't be blank" }
+
+  with_options presence: true do
+    validates :production_name
+    validates :purchase_date
+    validates :image
+    validates :user_id
+  end
 end
