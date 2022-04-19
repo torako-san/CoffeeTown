@@ -6,6 +6,9 @@ document.addEventListener('DOMContentLoaded', function () {
   // 新規投稿・編集ページのフォームがないならここで終了。「!」は論理否定演算子。
   if (!shopForm) return null;
 
+  // 投稿できる枚数の制限を定義
+  const imageLimits = 4;
+
   // プレビュー画像を生成・表示する関数
   const buildPreviewImage = (dataIndex, blob) => {
 
@@ -21,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // 削除ボタンを生成
     const deleteButton = document.createElement("div");
-    deleteButton.setAttribute("class", "image-delete-button col-2 mx-auto my-4 text-danger fs-5 border border-danger border-1");
+    deleteButton.setAttribute("class", "image-delete-button col-3 mx-auto mt-3 text-danger fs-5 border border-danger border-1");
     deleteButton.innerText = "削除";
 
     // 削除ボタンをクリックしたらプレビューとfile_fieldを削除させる
