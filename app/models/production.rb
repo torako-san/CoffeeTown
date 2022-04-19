@@ -1,6 +1,6 @@
 class Production < ApplicationRecord
   belongs_to :shop
-  has_one_attached :image
+  has_many_attached :image
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :product_category
@@ -18,7 +18,7 @@ class Production < ApplicationRecord
   with_options presence: true do
     validates :production_name
     validates :purchase_date
-    validates :image
+    validates :images
     validates :user_id
   end
 end

@@ -6,31 +6,99 @@ document.addEventListener('DOMContentLoaded', function () {
   // 新規投稿・編集ページのフォームがないならここで終了。「!」は論理否定演算子。
   if (!shopForm) return null;
 
-  // input要素を取得
-  const fileField = document.querySelector('input[type="file"][name="shop_production[image]"]');
-  // input要素で値の変化が起きた際に呼び出される関数
-  fileField.addEventListener('change', function (e) {
+  // 投稿できる枚数の制限を定義
+  const imageLimits = 4;
 
-    // 古いプレビューが存在する場合は削除
-    const alreadyPreview = document.querySelector('.preview');
-    if (alreadyPreview) {
-      alreadyPreview.remove();
-    };
+  // プレビュー画像を生成・表示する関数
+  const buildPreviewImage = (dataIndex, blob) => {
 
-    console.log(e.target.files[0]);
-    const file = e.target.files[0];
-    const blob = window.URL.createObjectURL(file);
-    console.log(blob);
     // 画像を表示するためのdiv要素を生成
     const previewWrapper = document.createElement('div');
     previewWrapper.setAttribute('class', 'preview');
+    previewWrapper.setAttribute('data-index', dataIndex);
+
     // 表示する画像を生成
     const previewImage = document.createElement('img');
     previewImage.setAttribute('class', 'preview-image');
     previewImage.setAttribute('src', blob);
 
+    // 削除ボタンを生成
+    const deleteButton = document.createElement("div");
+    deleteButton.setAttribute("class", "image-delete-button col-3 mx-auto mt-3 text-danger fs-5 border border-danger border-1");
+    deleteButton.innerText = "削除";
+
+    // 削除ボタンをクリックしたらプレビューとfile_fieldを削除させる
+    deleteButton.addEventListener("click", () => deleteImage(dataIndex));
+
     // 生成したHTMLの要素をブラウザに表示させる
     previewWrapper.appendChild(previewImage);
+    previewWrapper.appendChild(deleteButton);
     previewList.appendChild(previewWrapper);
-  });
+    previewWrapper.classList.add('my-3');
+    previewWrapper.classList.add('col');
+  };
+
+  // file_fieldを生成・表示する関数
+  const buildNewFileField = () => {
+    // 2枚目用のfile_fieldを作成
+    const newFileField = document.createElement('input');
+    newFileField.setAttribute('type', 'file');
+    newFileField.setAttribute('name', 'shop_production[images][]');
+
+    // 最後のfile_fieldを取得
+    const lastFileField = document.querySelector('input[type="file"][name="shop_production[images][]"]:last-child');
+
+    // nextDataIndex = 最後のfile_fieldのdata-index + 1
+    const nextDataIndex = Number(lastFileField.getAttribute('data-index')) + 1;
+    newFileField.setAttribute('data-index', nextDataIndex);
+
+    // 追加されたfile_fieldにchangeイベントをセット
+    newFileField.addEventListener("change", changedFileField);
+
+    // 生成したfile_fieldを表示
+    const fileFieldsArea = document.querySelector('.input-images');
+    fileFieldsArea.appendChild(newFileField);
+    newFileField.classList.add('form-control');
+    newFileField.classList.add('form-control-sm');
+    newFileField.classList.add('card-text');
+    newFileField.classList.add('my-3')
+  };
+
+  // 指定したdata-indexを持つプレビューとfile_fieldを削除する
+  const deleteImage = (dataIndex) => {
+    const deletePreviewImage = document.querySelector(`.preview[data-index="${dataIndex}"]`);
+    deletePreviewImage.remove();
+    const deleteFileField = document.querySelector(`input[type="file"][data-index="${dataIndex}"]`);
+    deleteFileField.remove();
+  };
+
+  // input要素で値の変化が起きた際に呼び出される関数の中身
+  const changedFileField = (e) => {
+    // data-index（何番目を操作しているか）を取得
+    const dataIndex = e.target.getAttribute('data-index');
+
+    const file = e.target.files[0];
+
+    // fileが空 = 何も選択しなかったのでプレビュー等を削除して終了する
+    if (!file) {
+      deleteImage(dataIndex);
+      return null;
+    };
+
+    const blob = window.URL.createObjectURL(file);
+
+    buildPreviewImage(dataIndex, blob);
+
+    // 画像の枚数制限に引っかからなければ、新しいfile_fieldを追加する
+    const imageCount = document.querySelectorAll(".preview").length;
+    if (imageCount < imageLimits) buildNewFileField();
+  };
+
+  // input要素を取得
+  const fileField = document.querySelector('input[type="file"][name="shop_production[images][]"]');
+
+  // input要素で値の変化が起きた際に呼び出される関数
+  fileField.addEventListener('change', changedFileField);
 });
+
+

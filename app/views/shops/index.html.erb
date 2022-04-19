@@ -26,7 +26,7 @@
                 <div class="col-lg-3 col-md-6 mb-4">
                   <div class="col">
                     <div class="card shadow-sm">
-                        <%= image_tag shop.production.image, class:"production-img bd-placeholder-img card-img-top", width:"100%", height:"225" if shop.production.image.attached? %>
+                        <%= image_tag shop.production.image[0], class:"production-img bd-placeholder-img card-img-top", width:"100%", height:"225" if shop.production.image.attached? %>
                   
                         <div class="card-body">
                           <p class="card-text">■投稿日<br><%= shop.created_at.strftime('%Y/%m/%d') %></p>
