@@ -8,8 +8,61 @@
         <div class="container">
           <div class="card d-flex flex-column align-items-center">
             <div class="card-body pt-5">
-              <%= image_tag @production.image[0], class:"img-responsive img-rounded card-img-top mb-4", width:"100%", height:"400" %>
+              <div id="carouselExampleControls" class="carousel slide carousel-dark" data-bs-ride="carousel" data-bs-interval="false">
+                <div class="carousel-indicators pb-3">
+                  <% if @production.images[1].present? %>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="スライド 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="スライド 2"></button>
+                  <%end%>
+
+                  <% if @production.images[2].present? %>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="スライド 3"></button>
+                  <%end%>
+
+                  <% if @production.images[3].present? %>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="スライド 4"></button>
+                  <%end%>
+                </div>
+                
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <%= image_tag @production.images[0], class:"mb-4", width:"100%", height:"400" %>
+                  </div>
+                  
+                  <!--2枚目があれば表示する-->
+                  <% if @production.images[1].present? %>
+                    <div class="carousel-item">
+                      <%= image_tag @production.images[1], class:"mb-4", width:"100%", height:"400" %>
+                    </div>
+                  <%end%>
+
+                  <!--３枚目があれば表示する-->
+                  <% if @production.images[2].present? %>
+                    <div class="carousel-item">
+                      <%= image_tag @production.images[2], class:"mb-4", width:"100%", height:"400" %>
+                    </div>
+                  <%end%>
+
+                  <!--4枚目があれば表示する-->
+                  <% if @production.images[3].present? %>
+                    <div class="carousel-item">
+                      <%= image_tag @production.images[3], class:"mb-4", width:"100%", height:"400" %>
+                    </div>
+                  <%end%>
+
+                </div>
+                
+                <button type="button" class="carousel-control-prev" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">前へ</span>
+                </button>
+                <button type="button" class="carousel-control-next" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">次へ</span>
+                </button>
+              </div>
             </div>
+
             <%# 投稿者のみに表示する機能 %>
             <% if user_signed_in? && current_user.id == @production.user_id %>
               <p class="user-text mb-3 fs-5 text-danger">
@@ -17,7 +70,6 @@
               </p>
               <div class="btn-group col-6 mx-auto mb-4">
                 <%= link_to 'Edit', edit_shop_production_path, class:"btn btn-lg btn-outline-secondary" %>
-                <%= link_to 'Delte', "#", class:"btn btn-lg btn-outline-secondary" %>
               </div>
             <%end%>
             <%# /投稿者のみに表示する機能 %>

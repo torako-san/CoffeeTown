@@ -20,7 +20,7 @@ class ProductionsController < ApplicationController
 
   private
   def set_production
-    @production = Production.find(params[:shop_id])
+    @production = Production.find(params[:id])
   end
 
   def production_data_params
