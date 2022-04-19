@@ -19,8 +19,17 @@ document.addEventListener('DOMContentLoaded', function () {
     previewImage.setAttribute('class', 'preview-image');
     previewImage.setAttribute('src', blob);
 
+    // 削除ボタンを生成
+    const deleteButton = document.createElement("div");
+    deleteButton.setAttribute("class", "image-delete-button col-2 mx-auto my-4 text-danger fs-5 border border-danger border-1");
+    deleteButton.innerText = "削除";
+
+    // 削除ボタンをクリックしたらプレビューとfile_fieldを削除させる
+    deleteButton.addEventListener("click", () => deleteImage(dataIndex));
+
     // 生成したHTMLの要素をブラウザに表示させる
     previewWrapper.appendChild(previewImage);
+    previewWrapper.appendChild(deleteButton);
     previewList.appendChild(previewWrapper);
     previewWrapper.classList.add('my-3');
     previewWrapper.classList.add('col');
@@ -35,6 +44,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // 最後のfile_fieldを取得
     const lastFileField = document.querySelector('input[type="file"][name="shop_production[images][]"]:last-child');
+
+    // nextDataIndex = 最後のfile_fieldのdata-index + 1
+    const nextDataIndex = Number(lastFileField.getAttribute('data-index')) + 1;
+    newFileField.setAttribute('data-index', nextDataIndex);
 
     // 追加されたfile_fieldにchangeイベントをセット
     newFileField.addEventListener("change", changedFileField);
