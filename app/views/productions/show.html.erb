@@ -8,7 +8,7 @@
         <div class="container">
           <div class="card d-flex flex-column align-items-center">
             <div class="card-body pt-5">
-              <%= image_tag @production.image, class:"img-responsive img-rounded card-img-top mb-4", width:"100%", height:"400" %>
+              <%= image_tag @production.image[0], class:"img-responsive img-rounded card-img-top mb-4", width:"100%", height:"400" %>
             </div>
             <%# 投稿者のみに表示する機能 %>
             <% if user_signed_in? && current_user.id == @production.user_id %>
