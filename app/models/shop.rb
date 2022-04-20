@@ -11,4 +11,13 @@ class Shop < ApplicationRecord
   end
 
   validates :prefectures_id, numericality: { other_than: 1, message: "can't be blank" }
+
+  def self.search(search)
+    if search != ""
+      Shop.where('text LIKE(?)', "%#{search}%")
+    else
+      Shop.all
+    end
+  end
+
 end
