@@ -1,3 +1,4 @@
+/** 共通部 **/
 .navbar {
   font-family: 'Carrois Gothic', sans-serif;
 }
@@ -14,29 +15,18 @@
   color: black;
 }
 
-/* 投稿画像部分 */
-.bd-placeholder-img {
-  font-size: 1.125rem;
-  text-anchor: middle;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
-}
-
-
-/* ヘッダー */
-.title {
-  text-decoration: none;
-}
-
-/* メイン */
 .top-img {
   background-image: url("section-img.jpg");
   background-size: cover;
   background-position: center;
 }
 
-/* 投稿入力ページ */
+/* ヘッダー */
+.title {
+  text-decoration: none;
+}
+
+/* 投稿フォーム */
 .indispensable {
   color: red
 }
@@ -50,4 +40,17 @@
 .shop-text {
   text-decoration: none;
   color: black;
+}
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+/* 商品詳細ページ */
+.img {
+  width: 500px;
 }
