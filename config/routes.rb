@@ -4,4 +4,7 @@ Rails.application.routes.draw do
   resources :shops do
     resources :productions, only: [:edit, :show, :update]
   end
+  collection do
+    get 'search'
+  end
 end
