@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   root 'shops#index'
   resources :shops do
     resources :productions, only: [:edit, :show, :update]
-  end
-  collection do
-    get 'search'
+    collection do
+      get 'search'
+    end
   end
 end
