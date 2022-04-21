@@ -1,5 +1,5 @@
 class ShopsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :search]
   before_action :set_shop, only: [:edit, :update, :show, :destroy]
 
   def index
@@ -42,6 +42,10 @@ class ShopsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def search
+    @shops = Shop.search(params[:keyword])
   end
 
   private
