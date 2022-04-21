@@ -52,13 +52,13 @@
 
                 </div>
                 
-                <button type="button" class="carousel-control-prev" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">前へ</span>
+                <button type="button" class="carousel-control-prev position-absolute top-50 start-0 translate-middle" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon position-absolute top-50 start-0 translate-middle" aria-hidden="true"></span>
+                  <span class="visually-hidden position-absolute top-50 start-0 translate-middle">前へ</span>
                 </button>
-                <button type="button" class="carousel-control-next" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">次へ</span>
+                <button type="button" class="carousel-control-next position-absolute top-50 start-100 translate-middle" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                  <span class="carousel-control-next-icon position-absolute top-50 start-100 translate-middle" aria-hidden="true"></span>
+                  <span class="visually-hidden position-absolute top-50 start-100 translate-middle">次へ</span>
                 </button>
               </div>
             </div>
@@ -83,6 +83,11 @@
             <dl class="card-boby row justify-content-center">
               <dt class="card-text col-sm-4 fs-5">商品名</dt>
               <dd class="card-text col-sm-5 fs-5"><%= @production.production_name %></dd>
+            </dl>
+
+            <dl class="card-boby row justify-content-center">
+              <dt class="card-text col-sm-4 fs-5">購入日</dt>
+              <dd class="card-text col-sm-5 fs-5"><%= @production.purchase_date %></dd>
             </dl>
 
             <%# カテゴリーがコーヒー豆の場合のみ表示させる情報 %>
