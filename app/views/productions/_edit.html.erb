@@ -3,9 +3,9 @@
   <%= form_with model: @production, url: shop_production_path, id: 'new_shop', local: true do |f| %>
 
     <%= render 'shared/error_messages', model: f.object %>
-      
-    <%# 商品情報 %>
-    <div class="card container w-50 justify-content-center">
+        
+      <%# 商品情報 %>
+      <div class="card container w-50 justify-content-center">
         <div class="weight-bold-text mt-4">
           <h3 class="shop">◎商品画像</h3>
           <span class="indispensable">必須</span>
@@ -19,7 +19,7 @@
           </div>
         </div>
       </div>
-      
+        
       <div class="form my-3">
         <div class="weight-bold-text">
           <h3 class="shop">◎商品カテゴリー</h3>
@@ -57,7 +57,7 @@
         <div class="weight-bold-text">
           <h3 class="shop">◎豆の品種</h3>
         </div>
-        <%= f.text_field :coffee_beans_type_id, class:"shops-text", id:"coffee-beans-type", placeholder:"例）アラビカ", maxlength:"15" %>
+        <%= f.text_field :coffee_beans_type, class:"shops-text", id:"coffee-beans-type", placeholder:"例）アラビカ", maxlength:"15" %>
       </div>
       <div class="form my-3">
         <div class="weight-bold-text">
@@ -112,7 +112,7 @@
       </div>
     </div>
     <%# /店舗情報 %>
-    
+      
     <%# 下部ボタン %>
     <div class="post-ideda btn-lg pb-4">
       <%= f.submit "更新する" ,class:"request-btn" %>
