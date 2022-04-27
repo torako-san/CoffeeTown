@@ -8,7 +8,7 @@
       <%= link_to "新規投稿", new_shop_path, class: "nav-link btn btn-secondary" %>
     </li>
     <li class="nav-item">
-       <%= link_to "マイページ", "#", class: "nav-link btn btn-secondary" %>
+       <%= link_to "マイページ", user_path(current_user.id), class: "nav-link btn btn-secondary" %>
     </li>
     <li class="nav-item">
        <%= link_to "ログアウト", destroy_user_session_path,  method: :delete, class: "nav-link btn btn-primary mb-3" %>
