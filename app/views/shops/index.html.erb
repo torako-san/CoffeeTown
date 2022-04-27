@@ -1,7 +1,7 @@
 <html>
   <body>
     <main>
-    <div class="top-img mb-2">
+    <div class="top-img">
       <section class="text-center container">
           <div class="row py-lg-5">
             <div class="col-lg-6 col-md-8 mx-auto mt-3">
@@ -39,7 +39,7 @@
                                 <%= link_to '店舗', shop_path(shop.id), class:"btn btn-sm btn-outline-secondary" %>
                                 <%= link_to '商品', shop_production_path(shop.id, shop.production.id), class:"btn btn-sm btn-outline-secondary" %>
                               </div>
-                              <%= link_to shop.user.nickname, root_path, class:"text-muted" %>
+                              <%= shop.user.nickname %>
                             </div>
                           </div>
                       </div>
