@@ -21,7 +21,7 @@
                 <p><%= @shop.chome_banchi %></p>
               </dd>
               <dt class="col-sm-3 my-2 border-bottom border-2">店舗URL</dt>
-              <dd class="col-sm-9 my-2 border-bottom border-2"><%= @shop.shop_url%></dd>
+              <dd class="col-sm-9 my-2 border-bottom border-2"><%=link_to @shop.shop_url, @shop.shop_url%></dd>
               <dt class="col-sm-3 my-2 border-bottom border-2">商品名</dt>
               <dd class="col-sm-9 my-2 border-bottom border-2"><%= @shop.production.production_name%></dd>
               <dt class="col-sm-3 my-2 border-bottom border-2">購入日</dt>
