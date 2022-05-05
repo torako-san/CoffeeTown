@@ -39,7 +39,7 @@
                                 <%= link_to '店舗', shop_path(shop.id), class:"btn btn-sm btn-outline-secondary" %>
                                 <%= link_to '商品', shop_production_path(shop.id, shop.production.id), class:"btn btn-sm btn-outline-secondary" %>
                               </div>
-                              <%= shop.user.nickname %>
+                              <%= link_to shop.user.nickname,user_path(shop.user_id), class:"text-muted" %>
                             </div>
                           </div>
                       </div>
