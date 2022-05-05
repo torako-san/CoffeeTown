@@ -1,7 +1,7 @@
 <html>
   <body>
     <main>
-      <h1 class="text-center"><%= current_user.nickname %>さんのマイページ</h1>
+      <h1 class="text-center"><%= @user.nickname %>さんの投稿一覧</h1>
       <% if @shop.present? %>
           <div class="shop-list py-5 bg-light">
             <div class="container">
