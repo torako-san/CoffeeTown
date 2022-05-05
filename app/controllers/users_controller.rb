@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def show
-    @shops = Shop.where(user_id: current_user.id).includes(:user).order("created_at DESC")
+    user = User.find(params[:id])
+    @shop = user.shops
   end
 end
