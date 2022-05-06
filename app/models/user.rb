@@ -7,5 +7,8 @@ class User < ApplicationRecord
   validates :nickname, presence: true
 
   has_many :shops
+
+  has_many :relationships, foreign_key: following_id
+
   has_many :reverse_of_relationships, class_name: 'Relationship', foreign_key: follower_id
 end
