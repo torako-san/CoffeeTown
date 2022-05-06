@@ -4,21 +4,33 @@
 
     <%= render 'shared/error_messages', model: f.object %>
         
-      <%# 商品情報 %>
-      <%# <div class="card container w-50 justify-content-center">
+      <%#商品情報%>
+      <div class="card container w-50 justify-content-center">
         <div class="weight-bold-text mt-4">
           <h3 class="shop">◎商品画像</h3>
           <span class="indispensable">必須</span>
-        </div>
-        <div class="col input-images card-body">
-          <div class="containe">
-            <div class="row d-flex justify-content-center" id="previews"></div>
+            <div class="container">
+              <div class="row">
+                <% if @production.images.attached? %>
+                  <% @production.images.each.with_index(1) do |image, i| %>
+                    <div class="col-lg-3 col-md-6">
+                      <div class=""><%= "#{i}番目の画像" %></div>
+                      <%= image_tag image, size: '100x100' %>
+                    </div>
+                  <%end%>
+                <%end%>
+              </div>
+            </div>
+          <div class="col input-images card-body">
+            <div class="containe">
+              <div class="row d-flex justify-content-center" id="previews"></div>
+            </div>
+            <div class="card-text input-group mb-3">
+              <%= f.file_field :images, name: 'shop_production[images][]', data: {index: 0}, class:"card-text form-control form-control-sm" %>
+            </div>
           </div>
-          <div class="card-text input-group mb-3">
-            <%= f.file_field :images, name: 'shop_production[images][]', data: {index: 0}, class:"card-text form-control form-control-sm" %>
-          <%# </div>
         </div>
-      </div> %>
+      </div>
         
       <div class="form my-3">
         <div class="weight-bold-text">
