@@ -3,15 +3,18 @@
   <span class="navbar-toggler-icon"></span>
 </button>
 <div class="collapse navbar-collapse me-4" id="navbarTogglerDemo02">
-  <ul class="navbar-nav me-auto mt-3 mx-4 mb-lg-0 gap-4">
+  <ul class="navbar-nav me-auto mt-2 mx-4 mb-lg-0 gap-4">
     <li class="nav-item">
-      <%= link_to "新規投稿", new_shop_path, class: "nav-link btn btn-secondary" %>
+      <%= link_to "NewPost", new_shop_path, class: "nav-link" %>
     </li>
     <li class="nav-item">
-       <%= link_to "マイページ", user_path(current_user.id), class: "nav-link btn btn-secondary" %>
+       <%= link_to "MyPage", user_path(current_user.id), class: "nav-link" %>
     </li>
     <li class="nav-item">
-       <%= link_to "ログアウト", destroy_user_session_path,  method: :delete, class: "nav-link btn btn-primary mb-3" %>
+      <%= link_to "User", users_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "Logout", destroy_user_session_path,  method: :delete, class: "nav-link" %>
     </li>
   </ul>
   <div class="text-white m-4">
