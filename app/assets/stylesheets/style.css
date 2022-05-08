@@ -54,3 +54,9 @@
 .img {
   width: 500px;
 }
+
+/* マイページ */
+.mypage-link {
+  text-decoration: none;
+  color: black;
+}
