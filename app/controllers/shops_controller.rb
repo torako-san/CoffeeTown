@@ -3,7 +3,7 @@ class ShopsController < ApplicationController
   before_action :set_shop, only: [:edit, :update, :show, :destroy]
 
   def index
-    @shop = Shop.all.order('created_at DESC')
+    @shop = Shop.includes(:user).order('created_at DESC')
   end
 
   def new
