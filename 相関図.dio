@@ -145,7 +145,7 @@
                 <mxCell id="554" value="has_many :shop" style="text;fillColor=default;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;perimeterSpacing=1;strokeColor=default;" parent="553" vertex="1">
                     <mxGeometry y="60" width="256" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="555" value="has_many :wish_lists, dependent:  :destory" style="text;fillColor=default;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;strokeColor=default;" parent="553" vertex="1">
+                <mxCell id="555" value="has_many :wish_lists" style="text;fillColor=default;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;strokeColor=default;" parent="553" vertex="1">
                     <mxGeometry y="90" width="256" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="558" value="アソシエーション" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;perimeterSpacing=1;fillColor=default;swimlaneFillColor=default;" parent="1" vertex="1">
@@ -169,10 +169,10 @@
                 <mxCell id="474" value="belongs_to :shop" style="text;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;strokeColor=default;" parent="470" vertex="1">
                     <mxGeometry y="120" width="288" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="657" value="has_many :user, optional: true" style="text;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;strokeColor=default;" parent="470" vertex="1">
+                <mxCell id="657" value="belongs_to :user" style="text;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;strokeColor=default;" parent="470" vertex="1">
                     <mxGeometry y="150" width="288" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="472" value="has_many :wish_lists, dependent:  :destory" style="text;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;strokeColor=default;" parent="470" vertex="1">
+                <mxCell id="472" value="has_many :wish_lists" style="text;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;strokeColor=default;" parent="470" vertex="1">
                     <mxGeometry y="180" width="288" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="473" value="has_many :production_tags" style="text;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;strokeColor=default;" parent="470" vertex="1">
@@ -369,7 +369,7 @@
                         <mxPoint x="3120" y="1313" as="sourcePoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="656" style="edgeStyle=elbowEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;startArrow=ERoneToMany;startFill=0;endArrow=ERoneToMany;endFill=0;strokeColor=#000000;strokeWidth=3;endSize=14;startSize=14;" parent="672" source="651" edge="1">
+                <mxCell id="656" style="edgeStyle=elbowEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;startArrow=ERoneToMany;startFill=0;endArrow=none;endFill=0;strokeColor=#000000;strokeWidth=3;endSize=14;startSize=14;" parent="672" source="651" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="1920" y="1264" as="targetPoint"/>
                         <Array as="points">
