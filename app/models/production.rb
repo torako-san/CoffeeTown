@@ -2,6 +2,9 @@ class Production < ApplicationRecord
   belongs_to :shop
   has_many_attached :images
 
+  has_many :wish_lists
+  belongs_to :user
+  
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :product_category
   belongs_to :coffee_blend

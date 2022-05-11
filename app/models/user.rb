@@ -8,6 +8,9 @@ class User < ApplicationRecord
 
   has_many :shops
 
+  has_many :wish_lists
+  has_many :productions
+
   has_many :relationships, foreign_key: :following_id
   has_many :followings, through: :relationships, source: :follower
 
