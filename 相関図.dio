@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="t9F14xw1f0Ioce3EhGEr" name="ページ1">
-        <mxGraphModel dx="1103" dy="463" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="2339" background="#ffffff" math="0" shadow="0">
+        <mxGraphModel dx="623" dy="283" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="2339" background="#ffffff" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -989,12 +989,12 @@
                         <mxRectangle width="114" height="30" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="593" value="references" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;rounded=0;shadow=0;sketch=0;fontSize=14;strokeWidth=1;" parent="422" vertex="1">
+                <mxCell id="593" value="integer" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;rounded=0;shadow=0;sketch=0;fontSize=14;strokeWidth=1;" parent="422" vertex="1">
                     <mxGeometry x="144" width="96" height="30" as="geometry">
                         <mxRectangle width="96" height="30" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="596" value="NOT NULL 　/ 　外部キー" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;rounded=0;shadow=0;sketch=0;fontSize=14;strokeWidth=1;" parent="422" vertex="1">
+                <mxCell id="596" value="NOT NULL " style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;rounded=0;shadow=0;sketch=0;fontSize=14;strokeWidth=1;" parent="422" vertex="1">
                     <mxGeometry x="240" width="208" height="30" as="geometry">
                         <mxRectangle width="208" height="30" as="alternateBounds"/>
                     </mxGeometry>
@@ -1012,12 +1012,12 @@
                         <mxRectangle width="114" height="30" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="594" value="references" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;rounded=0;shadow=0;sketch=0;fontSize=14;strokeWidth=1;" parent="406" vertex="1">
+                <mxCell id="594" value="integer" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;rounded=0;shadow=0;sketch=0;fontSize=14;strokeWidth=1;" parent="406" vertex="1">
                     <mxGeometry x="144" width="96" height="30" as="geometry">
                         <mxRectangle width="96" height="30" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="597" value="NOT NULL 　/ 　外部キー" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;rounded=0;shadow=0;sketch=0;fontSize=14;strokeWidth=1;" parent="406" vertex="1">
+                <mxCell id="597" value="NOT NULL " style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;rounded=0;shadow=0;sketch=0;fontSize=14;strokeWidth=1;" parent="406" vertex="1">
                     <mxGeometry x="240" width="208" height="30" as="geometry">
                         <mxRectangle width="208" height="30" as="alternateBounds"/>
                     </mxGeometry>
