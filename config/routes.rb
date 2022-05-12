@@ -7,7 +7,7 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
-  resources :wish_lists, only: [:create]
+  resources :wish_lists, only: [:create, :destroy]
   resources :users do
     resource :relationships, only: [:create, :destroy]
     get :followings, on: :member
