@@ -8,6 +8,9 @@ class User < ApplicationRecord
 
   has_many :shops
 
+  has_many :wish_lists
+  has_many :productions
+
   has_many :relationships, foreign_key: :following_id
   has_many :followings, through: :relationships, source: :follower
 
@@ -16,5 +19,9 @@ class User < ApplicationRecord
 
   def is_followed_by?(user)
     reverse_of_relationships.find_by(following_id: user.id).present?
+  end
+
+  def liked_by?(production_id)
+    wish_lists.where(production_id: production_id).exists?
   end
 end
