@@ -1,5 +1,5 @@
 class WishListsController < ApplicationController
-  before_action :product_params only: [:create, :destroy]
+  before_action :product_params
 
   def create
     WishList.create(user_id: current_user.id, production_id: params[:id])
