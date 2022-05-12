@@ -73,9 +73,9 @@
             <% else %>
               <div class="mb-3 fs-5">
                 <% if current_user.liked_by?(@production.id) %>
-                  <td>欲しいを外す</td>
+                  <td><%= link_to '欲しいを外す', destroy_wishlist_path(@production), method: :delete %></td>
                 <% else %>
-                  <td><%= link_to '欲しい', wish_lists_path, method: :POST %></td>
+                  <td><%= link_to '欲しい', create_wishlist_path(@production), method: :post%></td>
                 <% end %>
               </div>
             <%end%>
