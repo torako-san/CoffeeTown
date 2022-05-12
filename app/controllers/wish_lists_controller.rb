@@ -1,11 +1,11 @@
 class WishListsController < ApplicationController
   def create
-    Wish_Lists.create(user_id: current_user.id, production_id: params[:id])
-    redirect_to shop_production_path
+    WishList.create(user_id: current_user.id, production_id: params[:id])
+    redirect_to shop_production_path(:shop_id)
   end
 
   def destroy
-    Wish_Lists.find_by(user_id: current_user.id, production_id: params[:id]).destroy
-    redirect_to shop_production_path
+    WishList.find_by(user_id: current_user.id, production_id: params[:id]).destroy
+    redirect_to shop_production_path(:shop_id)
   end
 end
