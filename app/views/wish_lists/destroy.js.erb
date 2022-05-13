@@ -1,1 +1,1 @@
-alert('いいねを解除できている!');
+document.getElementById('like_<%= @production.id %>').innerHTML = '<%= j(render 'wish_lists/wishlist') %>'
