@@ -1,5 +1,5 @@
 class WishListsController < ApplicationController
-  before_action :product_params
+  before_action :product_params, only: [:create, :destroy]
 
   def index
   end
