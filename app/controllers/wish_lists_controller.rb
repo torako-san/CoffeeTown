@@ -1,6 +1,9 @@
 class WishListsController < ApplicationController
   before_action :product_params
 
+  def index
+  end
+
   def create
     WishList.create(user_id: current_user.id, production_id: params[:id])
   end
