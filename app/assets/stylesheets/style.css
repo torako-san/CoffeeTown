@@ -79,3 +79,12 @@
   font-size: 20px;
   color: #e54747;
 }
+
+/* いいねリスト */
+.list-link {
+  text-decoration: none;
+}
+
+.list-text {
+  color: black;
+}

@@ -1,0 +1,27 @@
+<div class="text-center">
+  <div class="container marketing">
+    <div class="row d-flex justify-content-center">
+      <div class="col-10 mt-5">
+        <table class="table text-center">
+          <thead>
+            <tr class="text-center">
+              <h1>- Wish List -<h1>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @wishlist.each do |wishlist| %>
+              <tr>
+                <td>
+                  <%= link_to shop_production_path(wishlist, wishlist.production.id), class:"list-link" do %>
+                    <div class="list-text mt-2"><%= wishlist.production.production_name %></div>
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

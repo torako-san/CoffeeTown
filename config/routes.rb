@@ -7,6 +7,8 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
+  
+  get 'wishlist' => 'wish_lists#index', as: 'index_wishlist'
   post 'wishlist/:id' => 'wish_lists#create', as: 'create_wishlist'
   delete 'wishlist/:id' => 'wish_lists#destroy', as: 'destroy_wishlist'
 
