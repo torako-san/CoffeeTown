@@ -71,10 +71,8 @@
                 <%= link_to 'Edit', edit_shop_production_path(@production.id), class:"btn btn-lg btn-outline-secondary" %>
               </div>
             <% else %>
-              <div class="mb-3 fs-5">
-                <div id="like_<%= @production.id %>">
-                  <%= render 'wish_lists/wishlist' %>
-                </div>
+              <div class="mb-2 fs-5" id="like_<%= @production.id %>">
+                <%= render 'wish_lists/wishlist' %>
               </div>
             <%end%>
           </div> 
