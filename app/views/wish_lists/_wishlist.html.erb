@@ -1,11 +1,15 @@
 <% if current_user.liked_by?(@production.id) %>
   <td>
-    <%= link_to '欲しいを外す', destroy_wishlist_path(@production), method: :delete, remote: true %>
+    <%= link_to destroy_wishlist_path(@production), class: "like-link", method: :delete, remote: true do %>
+      <i class="fa fa-heart unlike-btn"></i>
+    <% end %>
     ：  <%= @production.wish_lists.count %>
   </td>
 <% else %>
   <td>
-    <%= link_to '欲しい', create_wishlist_path(@production), method: :post, remote: true %>
+    <%= link_to create_wishlist_path(@production), class: "like-link", method: :post, remote: true do %>
+      <i class="fa fa-heart like-btn"></i>
+    <% end %>
     ：  <%= @production.wish_lists.count %>
   </td>
 <% end %>
