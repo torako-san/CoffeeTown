@@ -60,3 +60,22 @@
   text-decoration: none;
   color: black;
 }
+
+/* いいねボタン */
+.like-link {
+  text-decoration: none;
+}
+
+.like-link:hover {
+  background-color: #fff !important;
+}
+
+.like-btn {
+  font-size: 20px;
+  color: #808080;
+}
+
+.unlike-btn {
+  font-size: 20px;
+  color: #e54747;
+}
