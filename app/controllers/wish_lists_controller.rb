@@ -1,4 +1,5 @@
 class WishListsController < ApplicationController
+  before_action :authenticate_user!
   before_action :product_params, only: [:create, :destroy]
 
   def index
