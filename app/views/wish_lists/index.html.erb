@@ -1,12 +1,15 @@
-<div class="text-center">
+<h1 class="text-center">
+  - Wish List -
+</h1>
+<div class="bg-light">
   <div class="container marketing">
     <div class="row d-flex justify-content-center">
       <div class="col-10 mt-5">
-        <table class="table text-center">
+        <table class="table">
           <thead>
-            <tr class="text-center">
-              <h1>- Wish List -<h1>
-              <th></th>
+            <tr>
+              <th>Product_Name</th>
+              <th>Poster</th>
             </tr>
           </thead>
           <tbody>
@@ -15,6 +18,11 @@
                 <td>
                   <%= link_to shop_production_path(wishlist, wishlist.production.id), class:"list-link" do %>
                     <div class="list-text mt-2"><%= wishlist.production.production_name %></div>
+                  <% end %>
+                </td>
+                <td class="pl-4">
+                  <%= link_to shop_production_path(wishlist, wishlist.production.id), class:"list-link" do %>
+                    <div class="list-text"><%= wishlist.user.nickname %></div>
                   <% end %>
                 </td>
               </tr>
