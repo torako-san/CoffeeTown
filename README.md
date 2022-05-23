@@ -53,11 +53,31 @@ https://coffee-post.herokuapp.com/
 [要件を洗い出しシート](https://docs.google.com/spreadsheets/d/17slK2IjvGiE0_f0kYUpDYy4c0IeeOekIRQhc1366wZM/edit?usp=sharing)
 
 # 実装した機能についての画像やGIFおよび説明
-- ユーザー登録できているアカウントは投稿機能を使用できます。
-[![Image from Gyazo](https://i.gyazo.com/ca4b76d5c771d2e9f33c761b1796af5b.gif)](https://gyazo.com/ca4b76d5c771d2e9f33c761b1796af5b)
+- ユーザー登録には「ニックネーム、メールアドレス、パスワード」を正しく入力すると登録されます。
+[![Image from Gyazo](https://i.gyazo.com/f2a24467a23b4cf1d5fcb9122d269b8c.gif)](https://gyazo.com/f2a24467a23b4cf1d5fcb9122d269b8c)
 
-- ユーザーが未登録でも投稿一覧情報や店舗の詳細情報は見ることができます。
-[![Image from Gyazo](https://i.gyazo.com/9ecc3c8b077b4ee01630d23df293cb34.gif)](https://gyazo.com/9ecc3c8b077b4ee01630d23df293cb34)
+- ユーザー登録できているアカウントは投稿機能を使用できます。
+[![Image from Gyazo](https://i.gyazo.com/a2859637e31fe1ed47b649c443b1d786.gif)](https://gyazo.com/a2859637e31fe1ed47b649c443b1d786)
+
+- 必要最低限の「店舗情報、商品情報」を入力し、送信ボタンを押すと投稿されます。
+[![Image from Gyazo](https://i.gyazo.com/30cb800755f3ca0acbccb02fc4a0ec5f.gif)](https://gyazo.com/30cb800755f3ca0acbccb02fc4a0ec5f)
+
+- 投稿したデータは商品一覧のトップページに表示されます。
+[![Image from Gyazo](https://i.gyazo.com/a3809b22be4d95e3bc1d0b8c624746d8.gif)](https://gyazo.com/a3809b22be4d95e3bc1d0b8c624746d8)
+
+- ログインしたユーザーのみ、商品の詳細情報を見ることができます。
+[![Image from Gyazo](https://i.gyazo.com/38ffc2ee38de58d7129fb890806b1b98.gif)](https://gyazo.com/38ffc2ee38de58d7129fb890806b1b98)
+
+- 未ログインユーザーは投稿一覧情報や店舗の詳細情報だけ見ることができます。
+[![Image from Gyazo](https://i.gyazo.com/86b451eafd1087268f6e45266f7da447.gif)](https://gyazo.com/86b451eafd1087268f6e45266f7da447)
+
+- ログインしたユーザーのみ、投稿者の詳細ページへのアクセス、ユーザーのフォローができます。
+[![Image from Gyazo](https://i.gyazo.com/a2ed44872660514c3b208c0d345149b2.gif)](https://gyazo.com/a2ed44872660514c3b208c0d345149b2)
+
+- 未ログインユーザーは投稿者の詳細ページにはアクセスできません。
+[![Image from Gyazo](https://i.gyazo.com/099bd7be27188a1ce0728607839bec4e.gif)](https://gyazo.com/099bd7be27188a1ce0728607839bec4e)
+
+
 
 # 実装予定の機能
 - 複雑な条件の検索機能
