@@ -71,13 +71,14 @@ https://coffee-post.herokuapp.com/
 - 未ログインユーザーは投稿一覧情報や店舗の詳細情報だけ見ることができます。
 [![Image from Gyazo](https://i.gyazo.com/86b451eafd1087268f6e45266f7da447.gif)](https://gyazo.com/86b451eafd1087268f6e45266f7da447)
 
+- ログインしたユーザーのみ、商品詳細ページへのハートマークをクリックして、wishlistに商品を登録できます。
+[![Image from Gyazo](https://i.gyazo.com/a7f20cd5c763cf722c913be5c5281020.gif)](https://gyazo.com/a7f20cd5c763cf722c913be5c5281020)
+
 - ログインしたユーザーのみ、投稿者の詳細ページへのアクセス、ユーザーのフォローができます。
 [![Image from Gyazo](https://i.gyazo.com/a2ed44872660514c3b208c0d345149b2.gif)](https://gyazo.com/a2ed44872660514c3b208c0d345149b2)
 
 - 未ログインユーザーは投稿者の詳細ページにはアクセスできません。
 [![Image from Gyazo](https://i.gyazo.com/099bd7be27188a1ce0728607839bec4e.gif)](https://gyazo.com/099bd7be27188a1ce0728607839bec4e)
-
-
 
 # 実装予定の機能
 - 複雑な条件の検索機能
