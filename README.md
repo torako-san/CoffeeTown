@@ -100,6 +100,12 @@ https://coffee-post.herokuapp.com/
 ### バックエンド
 - Ruby
 
+### デプロイ環境
+- Heroku
+
+### 画像ストレージ
+- AWS
+
 ### タスク管理ツール
 - Trello
 
